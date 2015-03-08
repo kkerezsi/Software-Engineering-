@@ -1,0 +1,16 @@
+# git ignore file
+
+
+*.suo
+bin
+obj
+*.user
+
+*.vssscc
+*.vspscc
+*.log
+*.Publish.xml
+glob:Local.testsettings
+syntax: glob
+*.sln.docstates
+VIKI.RoomPreferences.v12.suo
