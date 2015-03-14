@@ -6,6 +6,7 @@ var app = angular.module('softwareEngeneering', [
     'ui.bootstrap',
     'configsModule',
     'homepageModule',
+    'ramonaPageModule',
 ])
 
 .config(function config($routeProvider,RestangularProvider, $httpProvider, configs) {
@@ -14,6 +15,10 @@ var app = angular.module('softwareEngeneering', [
         .when('/', {
             controller: 'HomepageCtrl',
             templateUrl: 'app/homepage/homepage.html'
+        })
+        .when('/Ramona', {
+            controller: 'RamonaPageCtrl',
+            templateUrl: 'app/ramonaPage/ramonaPage.html'
         });
 })
 
