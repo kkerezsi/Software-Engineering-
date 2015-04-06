@@ -58,6 +58,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.js" />
+    <Content Include="app\chiefOfDepartment\chiefOfDepartment.html" />
+    <Content Include="app\chiefOfDepartment\chiefOfDepartment.js" />
+    <Content Include="app\chiefOfDepartment\factory\chiefFactory.js" />
     <Content Include="app\configs.js" />
     <Content Include="app\homepage\factory\homepageFactory.js" />
     <Content Include="app\homepage\homepage.html" />
@@ -883,6 +886,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

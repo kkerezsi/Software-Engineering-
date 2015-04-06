@@ -1,0 +1,86 @@
+﻿<div class="navbar navbar-default">
+    <div class="container">
+        <a class="navbar-brand" href="#">Academic Info UBB</a>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Chief of Department</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="container">
+    <div class="jumbotron text-center">
+        <h1>{{nume}}</h1>
+        <p class="lead">{{cadru}}</p>
+        <h3>Chief of Computer Science Department</h3>
+    </div>
+    <hr>
+
+    <div class="jumbotron text-center" style="height:300px">
+
+        <div class="col-lg-4 col-md-4 col-sm-4 text-left">
+            <select class="btn btn-toolbar col-lg-9" ng-options="teacher.Id as teacher.Nume for teacher in teachers"
+                ng-model="teacher"
+                ng-change="changeTeacher(teacher)">
+                <option value="">Select Teacher</option>
+            </select>
+            <br />
+            <br />
+            <br />
+            <div style="padding-left:0px"class="col-lg-9">
+                <table class="table table-hover table-bordered">
+                    <thead style="background-color:grey;color:white">
+                        <tr>
+                            <th>Disciplines</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in tipuriDiscipline" style="background-color:white">
+                            <td>{{item.Nume}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            <select class="btn btn-toolbar col-lg-9" ng-options="discipline.Id as discipline.Nume for discipline in tipuriDiscipline" ng-model="discipline">
+                <option value="">Select an Optional Course </option>
+            </select>
+            <br />
+            <br />
+            <br />
+            <div class="col-lg-12 text-center" style="padding-left:0px">
+                <button class="btn btn-primary col-lg-9" ng-click="onClickOptional()">Approve Course</button>
+            </div>
+            <br />
+            <br />
+            <div class="text-left">
+                <b  ng-if="optionalSelected" style="color:green;padding-left:0px;">A new optional has been selected!
+                </b>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-4 text-right">
+            <div class="col-lg-12">
+                <button class="btn btn-primary col-lg-9">Top of Diciplines</button>
+            </div>
+            <br />
+            <br />
+            <br />
+            <div class="col-lg-9">
+                <table class="table table-hover table-bordered">
+                    <thead style="background-color:grey;color:white">
+                        <tr>
+                            <th>Disciplines</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in tipuriDiscipline" style="background-color:white">
+                            <td>{{item.Nume}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

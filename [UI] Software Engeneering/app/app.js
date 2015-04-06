@@ -6,6 +6,7 @@ var app = angular.module('softwareEngeneering', [
     'ui.bootstrap',
     'configsModule',
     'homepageModule',
+    'chiefModule',
     'ramonaPageModule',
 ])
 
@@ -15,6 +16,10 @@ var app = angular.module('softwareEngeneering', [
         .when('/', {
             controller: 'HomepageCtrl',
             templateUrl: 'app/homepage/homepage.html'
+        })
+        .when('/Chief', {
+            controller: 'ChiefCtrl',
+            templateUrl: 'app/chiefOfDepartment/chiefOfDepartment.html'
         })
         .when('/Ramona', {
             controller: 'RamonaPageCtrl',
