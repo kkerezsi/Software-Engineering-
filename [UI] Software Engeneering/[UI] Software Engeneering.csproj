@@ -65,6 +65,9 @@
     <Content Include="app\homepage\factory\homepageFactory.js" />
     <Content Include="app\homepage\homepage.html" />
     <Content Include="app\homepage\homepage.js" />
+    <Content Include="app\register\factory\registerFactory.js" />
+    <Content Include="app\register\register.html" />
+    <Content Include="app\register\register.js" />
     <Content Include="app\teacher\factory\teacherFactory.js" />
     <Content Include="app\teacher\teacher.html" />
     <Content Include="app\teacher\teacher.js" />

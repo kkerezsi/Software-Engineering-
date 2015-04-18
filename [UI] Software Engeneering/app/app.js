@@ -8,6 +8,7 @@ var app = angular.module('softwareEngeneering', [
     'homepageModule',
     'chiefModule',
     'teacherModule',
+    'registerModule',
 ])
 
 .config(function config($routeProvider,RestangularProvider, $httpProvider, configs) {
@@ -24,7 +25,11 @@ var app = angular.module('softwareEngeneering', [
         .when('/Teacher', {
             controller: 'TeacherCtrl',
             templateUrl: 'app/teacher/teacher.html'
-        });
+        })
+         .when('/Register', {
+             controller: 'RegisterCtrl',
+             templateUrl: 'app/register/register.html'
+         });
 })
 
 

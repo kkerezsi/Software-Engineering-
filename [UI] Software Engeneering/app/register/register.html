@@ -1,0 +1,79 @@
+﻿<div class="navbar navbar-default">
+    <div class="container">
+        <a class="navbar-brand" href="#">Academic Info UBB</a>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Register</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="container">
+    <div class="jumbotron text-center">
+        <h1>Welcome!</h1>
+        <h2>Facultatea de Matematica-Informatica</h2>
+    </div>
+    <hr>
+
+    <div class="jumbotron text-center" style="height:700px">
+       
+        <div class="col-lg-4 col-md-4 col-sm-4 text-left">
+
+            <form name="newUserForm">
+                <label>
+                    <p>First Name:</p>
+                    <input type="text" name="firstName" ng-model="firstName" style="height:50px">
+                </label>
+                <br />
+                <label>
+                    <p>Last Name:</p>
+                    <input type="text" name="lastName" ng-model="lastName" style="height:50px">
+                </label>
+                <br />
+                <label>
+                    <p>Email:</p>
+                    <input type="text" name="email" ng-model="email" style="height:50px">
+                </label>
+                <br />
+                <label>
+                    <p>Password:</p>
+                    <input type="password" name="password" ng-model="password" style="height:50px">
+                </label>
+                <br />
+                <br />
+            </form>
+
+            <div class="col-lg-10 col-md-10 col-sm-10">
+                <select class="btn btn-toolbar col-lg-9" ng-options="option.Id as option.Tip for option in options"
+                        ng-model="option"
+                        ng-change="changeOption(option)"
+                        style="height:50px">
+                    <option value="">Sign Up as ...</option>
+                </select>
+             </div>   
+
+            <br />
+            <br />
+            <hr />
+           
+            
+            <div class="col-lg-10 text-center" style="padding-left:0px">
+                    <button class="btn btn-primary col-lg-10" ng-click="onClickOptional()"
+                            style="height:60px">
+                        Register
+                    </button>
+            </div>
+            <br />
+            <br />
+            <div class="text-center">
+                <b ng-if=" optionalselected" style="color:green;padding-left:0px;">
+                Registration Successful!
+                </b>
+            </div>
+           
+           
+         </div>
+       
+    </div>
+</div>
+
+
