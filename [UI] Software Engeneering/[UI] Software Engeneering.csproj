@@ -65,8 +65,9 @@
     <Content Include="app\homepage\factory\homepageFactory.js" />
     <Content Include="app\homepage\homepage.html" />
     <Content Include="app\homepage\homepage.js" />
-    <Content Include="app\ramonaPage\ramonaPage.html" />
-    <Content Include="app\ramonaPage\ramonaPage.js" />
+    <Content Include="app\teacher\factory\teacherFactory.js" />
+    <Content Include="app\teacher\teacher.html" />
+    <Content Include="app\teacher\teacher.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />

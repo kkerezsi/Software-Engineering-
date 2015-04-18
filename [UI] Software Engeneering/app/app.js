@@ -7,7 +7,7 @@ var app = angular.module('softwareEngeneering', [
     'configsModule',
     'homepageModule',
     'chiefModule',
-    'ramonaPageModule',
+    'teacherModule',
 ])
 
 .config(function config($routeProvider,RestangularProvider, $httpProvider, configs) {
@@ -21,9 +21,9 @@ var app = angular.module('softwareEngeneering', [
             controller: 'ChiefCtrl',
             templateUrl: 'app/chiefOfDepartment/chiefOfDepartment.html'
         })
-        .when('/Ramona', {
-            controller: 'RamonaPageCtrl',
-            templateUrl: 'app/ramonaPage/ramonaPage.html'
+        .when('/Teacher', {
+            controller: 'TeacherCtrl',
+            templateUrl: 'app/teacher/teacher.html'
         });
 })
 
