@@ -29,7 +29,13 @@ var app = angular.module('softwareEngeneering', [
          .when('/Register', {
              controller: 'RegisterCtrl',
              templateUrl: 'app/register/register.html'
-         });
+         })
+        .when('SignIn',
+        {
+            controller: 'LoginCtrl',
+            templateUrl: 'app/login/login.html'
+        });
+
 })
 
 
