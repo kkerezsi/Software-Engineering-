@@ -9,6 +9,7 @@ var app = angular.module('softwareEngeneering', [
     'chiefModule',
     'teacherModule',
     'registerModule',
+    'loginModule',
 ])
 
 .config(function config($routeProvider,RestangularProvider, $httpProvider, configs) {
@@ -30,7 +31,7 @@ var app = angular.module('softwareEngeneering', [
              controller: 'RegisterCtrl',
              templateUrl: 'app/register/register.html'
          })
-        .when('SignIn',
+        .when('/LogIn',
         {
             controller: 'LoginCtrl',
             templateUrl: 'app/login/login.html'
