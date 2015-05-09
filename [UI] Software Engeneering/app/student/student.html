@@ -13,37 +13,36 @@
         <p class="lead">{{Cadru}}</p>
         <h3>Student</h3>
     </div>
-    <hr>
 
-    <div class="jumbotron text-center" style="height:300px">
-
-        <div class="col-lg-4 col-md-4 col-sm-4 text-left">
-            <br />
-            <br />
-            <br />
-            <div style="padding-left:0px" class="col-lg-9">
-                <table class="table table-hover table-bordered">
-                    <thead style="background-color:grey;color:white">
-                        <tr>
-                            <th>Coureses</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr ng-repeat="item in Cursuri" style="background-color:white">
-                            <td>{{item.Nume}}</td>
-                            <td>{{item.AnStudiu}}</td>
-                            <td>{{item.Semestru}}</td>
-                            <td>{{item.CodDisciplina}}</td>
-                            <td>{{item.Nota}}</td>
-                            <td>{{item.NumarCredite}}</td>
-                            <td>{{item.Final}}</td>
-                            <td>{{item.DataPromovarii}}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
+    <div class="col-lg-4 col-md-4 col-sm-4 text-left">
+        <div style="padding-left:0px" class="col-lg-9">
+            <p>Courses</p>
+            <table class="table table-hover table-bordered">
+                <thead style="background-color:grey;color:white">
+                    <tr>
+                        <th>Nume</th>
+                        <th>An Studiu</th>
+                        <th>Semestru</th>
+                        <th>Cod Disciplina</th>
+                        <th>Nota</th>
+                        <th>Numar Credite</th>
+                        <th>Final</th>
+                        <th>Data Promovarii</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in list.Cursuri" style="background-color:white">
+                        <td>{{item.Nume}}</td>
+                        <td>{{item.AnStudiu}}</td>
+                        <td>{{item.Semestru}}</td>
+                        <td>{{item.CodDisciplina}}</td>
+                        <td>{{item.Nota}}</td>
+                        <td>{{item.NumarCredite}}</td>
+                        <td>{{item.Final}}</td>
+                        <td>{{item.DataPromovarii}}</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-     
+
     </div>
-</div>

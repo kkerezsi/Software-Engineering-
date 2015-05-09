@@ -1,7 +1,8 @@
-﻿var chiefModule = angular.module('studentModule', [])
+﻿var studentModule = angular.module('studentModule', [])
 
 .controller('StudentCtrl', function ($scope, studentFactory) {
 
+    console.log(1);
     $scope.Cursuri = [];
     $scope.Nume = "";
     $scope.Cadru = "";
@@ -13,9 +14,9 @@
     $scope.Final = "";
     $scope.DataPromovarii = "";
 
-    $scope.onClickOptional = function () {
-        $scope.optionalSelected = !$scope.optionalSelected;
-    }
+    //$scope.onClickOptional = function () {
+    //    $scope.optionalSelected = !$scope.optionalSelected;
+    //}
 
     $scope.promise = studentFactory.getCourse().list;
     console.log($scope.promise);
@@ -32,20 +33,6 @@
         $scope.NumarCredite = $scope.promise[0].NumarCredite;
         $scope.Final = $scope.promise[0].Final;
         $scope.DataPromovarii = $scope.promise[0].DataPromovarii;
-    }
-
-    $scope.changestudent = function (student) {
-        if (student) {
-            var students = $scope.studens;
-
-            angular.foreach($scope.students, function (value, key) {
-                if (value.id != null && value.id == student) {
-                    $scope.Cursuri = value.Cursuri;
-                    $scope.Nume = value.Nume;
-                    $scope.Cadru = value.Cadru;
-                }
-            })
-        }
     }
 
 })
