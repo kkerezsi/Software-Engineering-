@@ -3,6 +3,7 @@
 var app = angular.module('softwareEngeneering', [
     'restangular',
     'ngRoute',
+    'ngCookies',
     'ui.bootstrap',
     'configsModule',
     'homepageModule',
@@ -41,9 +42,8 @@ var app = angular.module('softwareEngeneering', [
         {
             controller: 'StudentCtrl',
             templateUrl: 'app/student/student.html'
-        });
-
-
+        })
+        .otherwise({ redirectTo: '/LogIn' });
 })
 
 
