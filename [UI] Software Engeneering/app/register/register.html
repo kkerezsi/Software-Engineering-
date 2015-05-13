@@ -1,30 +1,16 @@
-﻿<div class="navbar navbar-default">
-    <div class="container">
-        <a class="navbar-brand" href="#">Academic Info UBB</a>
-        <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Register</a></li>
-        </ul>
-    </div>
-</div>
-
-<div class="container">
+﻿<div class="container">
     <div class="jumbotron text-center">
         <h1>Welcome!</h1>
         <h2>Facultatea de Matematica-Informatica</h2>
     </div>
     <hr>
 
-    <div class="jumbotron" style="height:700px">
+    <div class="jumbotron" style="height:500px">
 
         <div class="col-lg-7 col-md-7 col-sm-7">
 
             <form name="newUserForm">
                 <div>
-                    <div class="form-inline">
-                        <span style="padding-top:10px" class="col-lg-4 col-md-4 col-sm-4"><b>*Username:</b></span>
-                        <input class="form-control" type="text" name="username" ng-model="username" style="height:50px;width:300px">
-                    </div>
-                    <br />
                     <div class="form-inline">
                         <span style="padding-top:10px" class="col-lg-4 col-md-4 col-sm-4"><b>First Name:</b></span>
                         <input class="form-control" type="text" name="firstName" ng-model="firstName" style="height:50px;width:300px">
@@ -40,17 +26,6 @@
                         <input class="form-control" type="text" name="email" ng-model="email" style="height:50px;width:300px">
                     </div>
                     <br />
-                    <div class="form-inline">
-                        <span style="padding-top:10px" class="col-lg-4 col-md-4 col-sm-4"><b>*Password:</b></span>
-                        <input class="form-control" type="password" name="password" ng-model="password" style="height:50px;width:300px">
-                    </div>
-
-                    <br />
-                    <div class="form-inline">
-                        <span style="padding-top:10px" class="col-lg-4 col-md-4 col-sm-4"><b>*Confirm Password:</b></span>
-                        <input class="form-control" type="password" name="confirmPassword" ng-model="confirmPassword" style="height:50px;width:300px">
-                    </div>
-                    <br />
                 </div>
             </form>
 
@@ -59,7 +34,7 @@
                         ng-model="option"
                         ng-change="changeOption(option)"
                         style="height:50px">
-                    <option value="">*Sign Up as ...</option>
+                    <option value="">*Register user as ...</option>
                 </select>
             </div>
 

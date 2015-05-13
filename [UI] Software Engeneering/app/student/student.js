@@ -1,8 +1,7 @@
 ﻿var studentModule = angular.module('studentModule', [])
 
-.controller('StudentCtrl', function ($scope, studentFactory) {
+.controller('StudentCtrl', function ($scope, $rootScope, studentFactory) {
 
-    console.log(1);
     $scope.Cursuri = [];
     $scope.Nume = "";
     $scope.Cadru = "";

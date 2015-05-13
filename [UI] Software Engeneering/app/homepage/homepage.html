@@ -1,18 +1,11 @@
-﻿<div class="navbar navbar-default">
-    <div class="container">
-        <a class="navbar-brand" href="#">Academic Info UBB</a>
-    </div>
-</div>
-
-
-<div class="container">
+﻿<div class="container">
     <div class="jumbotron">
         <a href="http://cs.ubbcluj.ro">
             <img style="max-height:300px;max-width:800px" src="../../Images/logo_ubb_albastru.png" />
         </a>
     </div>
     <hr>
-    <div class="jumbotron text-center" style="height:200px;">
+    <div class="jumbotron text-center" style="height:250px;">
         <div class="">
 
             <div class="col-lg-4 col-md-4 col-sm-4"></div>
@@ -23,7 +16,34 @@
                 <br />
                 <br />
                 <br />
-                <a class="btn btn-primary col-lg-10 col-md-10 col-sm-10" href="#/Register">REGISTER</a>
+
+                <div ng-if="username != null && username != undefined && (currentUser.role == 0 || currentUser.role == 1)">
+                    <a class="btn btn-primary col-lg-10 col-md-10 col-sm-10" href="#/Chief">CHIEF OF DEPARTMENT</a>
+                    <br />
+                    <br />
+                    <br />
+                </div>
+
+                <div ng-if="username != null && username != undefined && (currentUser.role == 0 || currentUser.role == 2)">
+                    <a class="btn btn-primary col-lg-10 col-md-10 col-sm-10" href="#/Register">REGISTER USER</a>
+                    <br />
+                    <br />
+                    <br />
+                </div>
+                <div ng-if="username != null && username != undefined && (currentUser.role == 0 || currentUser.role == 2)">
+                    <a class="btn btn-primary col-lg-10 col-md-10 col-sm-10" href="#/Teacher">TEACHER</a>
+                    <br />
+                    <br />
+                    <br />
+                </div>
+
+                <div ng-if="username != null && username != undefined && (currentUser.role == 0 || currentUser.role == 3)">
+                    <a class="btn btn-primary col-lg-10 col-md-10 col-sm-10" href="#/Student">STUDENT</a>
+                    <br />
+                    <br />
+                    <br />  
+                </div>
+
             </div>
         </div>
     </div> 

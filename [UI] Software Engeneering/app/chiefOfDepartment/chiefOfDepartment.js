@@ -13,7 +13,6 @@
     }
 
     $scope.promise = chiefFactory.getDiscipline().list;
-    console.log($scope.promise);
 
     if ($scope.promise != null) {
         $scope.teachers = $scope.promise;

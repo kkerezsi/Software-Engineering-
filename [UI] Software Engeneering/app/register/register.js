@@ -1,6 +1,6 @@
 ﻿var registerModule = angular.module('registerModule', [])
 
-.controller('RegisterCtrl', function ($scope, registerFactory) {
+.controller('RegisterCtrl', function ($scope, $rootScope, registerFactory) {
 
     $scope.firstName="";
     $scope.lastName = "";
@@ -25,5 +25,4 @@
     $scope.changeOption = function (option) {
         $scope.option = option;
         }
-
 })

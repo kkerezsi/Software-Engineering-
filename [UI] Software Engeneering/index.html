@@ -2,10 +2,20 @@
 <html ng-app="softwareEngeneering" ng-controller="AppCtrl">
 <head>
     <title></title>
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
     <link href="Content/bootstrap.css" rel="stylesheet" />
 </head>
-<body>
+<body style="background-image: url('Images/web-page-backgrounds-1-widescreen-hd-background-and-wallpaper.jpg');">
+    <div class="navbar navbar-default">
+        <div class="container">
+            <a class="navbar-brand" href="#">Academic Info UBB</a>
+            <div class="text-right" style="padding-top:10px" ng-if="username != undefined && username != null">
+                <b> Logged as :  {{username}} </b> &nbsp;&nbsp;&nbsp;
+                <button class="btn btn-info" ng-click="logout()">Logout</button>
+            </div>
+        </div>
+    </div>
+
     <div ng-view="">
     </div>
 </body>
@@ -16,11 +26,13 @@
 <script src="Scripts/lodash.min.js"></script>
 <script src="Scripts/restangular.min.js"></script>
 <script src="Scripts/angular-cookies.js"></script>
+<script src="Scripts/angular-resource.js"></script>
+<script src="Scripts/ngStorage.js"></script>
 
 <script type="text/javascript" src="Scripts/angular-ui/ui-bootstrap.js"></script>
 <script type="text/javascript" src="Scripts/angular-ui/ui-bootstrap-tpls.js"></script>
 
-<script src="app/app.js"></script> 
+<script src="app/app.js"></script>
 <script src="app/configs.js"></script>
 
 <script src="app/homepage/homepage.js"></script>
