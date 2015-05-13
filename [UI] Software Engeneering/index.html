@@ -8,9 +8,9 @@
 <body style="background-image: url('Images/web-page-backgrounds-1-widescreen-hd-background-and-wallpaper.jpg');">
     <div class="navbar navbar-default">
         <div class="container">
-            <a class="navbar-brand" href="#">Academic Info UBB</a>
+            <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-home"></span> Academic Info UBB</a>
             <div class="text-right" style="padding-top:10px" ng-if="username != undefined && username != null">
-                <b> Logged as :  {{username}} </b> &nbsp;&nbsp;&nbsp;
+                <b> Logged as : <span class="glyphicon glyphicon-user"></span> {{username}} </b> &nbsp;&nbsp;&nbsp;
                 <button class="btn btn-info" ng-click="logout()">Logout</button>
             </div>
         </div>
