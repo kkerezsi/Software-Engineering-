@@ -23,6 +23,7 @@ var app = angular.module('softwareEngeneering', [
     'registerModule',
     'loginModule',
     'studentModule',
+    'adminModule',
 ])
 
 .config(function config($routeProvider, RestangularProvider, $httpProvider, configs) {
@@ -86,6 +87,19 @@ var app = angular.module('softwareEngeneering', [
                     ]);
                 }
             }
+        })
+        .when('/Admin',
+        {
+            controller: 'AdminCtrl',
+            templateUrl: 'app/admin/admin.html',
+            /*resolve: {
+                permission: function (authorizationService, $route) {
+                    return authorizationService.permissionCheck([
+                        roles.superUser,
+                        roles.Student,
+                    ]);
+                }
+            }*/
         })
         .otherwise({ redirectTo: '/LogIn' });
 })

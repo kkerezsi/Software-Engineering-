@@ -1,0 +1,42 @@
+﻿<div class="container">
+    <div class="jumbotron text-center">
+        <h1>Petru Ciubotel</h1>
+        <p class="lead">Facultatea de Matematica-Informatica</p>
+        <h3>Admin</h3>
+    </div>
+    <hr>
+
+    <div class="col-lg-4 col-md-4 col-sm-4">
+        <select class="btn btn-toolbar col-lg-9" ng-options="cours.Id for cours in Courses"
+                ng-model="cours"
+                ng-change="changeCours(cours)">
+            <option value="">Select Cours</option>
+        </select>
+        <br />
+        <br />
+        <br />
+        <div style="padding-left:0px" class="col-lg-9">
+            <table class="table table-hover table-bordered">
+                <thead style="background-color:grey;color:white">
+                    <tr>
+                        <th>Id</th>
+                        <th>Group</th>
+                        <th>Year</th>
+                        <th>Name</th>
+                        <th>Grade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in Studenti" style="background-color:white">
+                        <td>{{item.Id}}</td>
+                        <td>{{item.Group}}</td>
+                        <td>{{item.Year}}</td>
+                        <td>{{item.Name}}</td>
+                        <td>{{item.Grade}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
