@@ -20,7 +20,6 @@
                 else {
                     $scope.failedLogin = true;
                 }
-
             });
         }
     };

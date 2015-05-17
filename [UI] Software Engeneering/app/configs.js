@@ -1,7 +1,5 @@
 ﻿
 angular.module('configsModule', [])
     .constant('configs', {
-        baseUrl: '/',
-        //baseFileUrl: '/Files/',
-        //baseUploadServiceUrl: '/business/UploadFile'
+        baseUrl: 'http://127.0.0.1:8000/',
     })

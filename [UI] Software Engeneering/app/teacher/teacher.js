@@ -7,9 +7,13 @@
     $scope.cadru = "";
 
     $scope.optionalSelected = false;
+    $scope.catalogSelected = true;
 
     $scope.onClickOptional = function () {
         $scope.optionalSelected = !$scope.optionalSelected;
+    }
+    $scope.onClickCatalog = function () {
+        $scope.catalogSelected = !$scope.optionalSelected;
     }
 
     $scope.promise = teacherFactory.getGroups().list;

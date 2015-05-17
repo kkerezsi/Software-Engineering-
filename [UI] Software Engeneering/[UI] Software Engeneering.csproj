@@ -71,6 +71,7 @@
     <Content Include="app\register\factory\registerFactory.js" />
     <Content Include="app\register\register.html" />
     <Content Include="app\register\register.js" />
+    <Content Include="app\student\contract.html" />
     <Content Include="app\student\factory\studentFactory.js" />
     <Content Include="app\student\student.html" />
     <Content Include="app\student\student.js" />
@@ -83,6 +84,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Images\blue_technology_abstract_circuitry_lines_hd-wallpaper-1797823.jpg" />
     <Content Include="Images\logo_ubb_albastru.png" />
     <Content Include="Images\web-page-backgrounds-1-widescreen-hd-background-and-wallpaper.jpg" />
     <Content Include="index.html" />

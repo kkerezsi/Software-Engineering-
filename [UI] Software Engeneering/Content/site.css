@@ -1,5 +1,5 @@
 ﻿body {
-    background-image: url('../Images/web-page-backgrounds-1-widescreen-hd-background-and-wallpaper.jpg');
+    background-image: url('../Images/blue_technology_abstract_circuitry_lines_hd-wallpaper-1797823.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -7,4 +7,14 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+}
+
+
+.colorGreen {
+    color:green;
+}
+
+
+.colorRed {
+    color:red;
 }

@@ -68,12 +68,14 @@
     };
 
     service.SetCredentials = function (username, password, roleType) {
+        //TestVals
         var authdata = Base64.encode(username + ':' + password);
-
+        id = '2';
         $rootScope.globals = {
             currentUser: {
                 username: username,
                 authdata: authdata,
+                userId: id,
                 role: roleType
             }
         };

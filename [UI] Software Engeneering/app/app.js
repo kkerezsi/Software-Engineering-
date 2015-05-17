@@ -87,10 +87,23 @@ var app = angular.module('softwareEngeneering', [
                 }
             }
         })
+        .when('/Student/Contract',
+        {
+            controller: 'ContractCtrl',
+            templateUrl: 'app/student/contract.html',
+            resolve: {
+                permission: function (authorizationService, $route) {
+                    return authorizationService.permissionCheck([
+                        roles.superUser,
+                        roles.Student,
+                    ]);
+                }
+            }
+        })
         .otherwise({ redirectTo: '/LogIn' });
 })
 
-.controller('AppCtrl', function ($scope, $rootScope,$route, $cookieStore, loginFactory) {
+.controller('AppCtrl', function ($scope, $rootScope, $route, $cookieStore, loginFactory, $location) {
 
     $scope.getCookie = function () {
         var globals = $cookieStore.get('globals');
@@ -115,12 +128,12 @@ var app = angular.module('softwareEngeneering', [
         loginFactory.ClearCredentials();
         $scope.username = undefined;
         $route.reload();
+        $location.path('/');
     }
 
     $scope.getCookie();
     $scope.setDefalut();
 
-    console.log($rootScope.globals);
 })
 
 .factory('authorizationService', function ($resource, $q, $rootScope, $location) {
@@ -169,8 +182,6 @@ var app = angular.module('softwareEngeneering', [
                     isTeacher: $rootScope.globals != undefined ? $rootScope.globals.currentUser.role == 2 ? true : false : false,
                     isStudent: $rootScope.globals != undefined ? $rootScope.globals.currentUser.role == 3 ? true : false : false,
                 };
-
-                console.log(parentPointer.permissionModel.permission);
 
                 parentPointer.permissionModel.isPermissionLoaded = true;
                 parentPointer.getPermission(parentPointer.permissionModel, roleCollection, deferred);
