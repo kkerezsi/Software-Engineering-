@@ -12,11 +12,8 @@
             loginFactory.Login(username, password, function (response) {
                 if (response.success) {
                     loginFactory.SetCredentials(username, password, response.roleType);
-
                     if ($rootScope.globals.currentUser) {
-                        var user = $rootScope.globals.currentUser;
-                        $scope.username = $rootScope.globals.currentUser.username;
-                        console.log($scope.username);
+                        $scope.getCookie();
                         $location.path('/');
                     }
                 }
