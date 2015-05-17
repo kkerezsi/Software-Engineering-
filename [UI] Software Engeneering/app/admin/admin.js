@@ -8,6 +8,12 @@
     $scope.Studenti = [];
     $scope.Courses = [];
 
+    $scope.grantSelected = false;
+
+    $scope.onClickGrant = function () {
+        $scope.grantSelected = !$scope.grantSelected;
+    }
+
     $scope.promise = adminFactory.getCourses().list;
 
 
