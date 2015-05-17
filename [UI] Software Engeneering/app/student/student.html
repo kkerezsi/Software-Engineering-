@@ -13,6 +13,11 @@
         <p class="lead">{{Cadru}}</p>
         <h3>Student</h3>
     </div>
+    <form action="">
+        <input type="radio" name="AnUniversitar" value="2013-1014"> 2013-2014<br>
+        <input type="radio" name="AnUniversitar" value="2014-2015" checked> 2014-2015<br>
+        <input type="radio" name="AnUniversitar" value="2015-2016"> 2015-2016
+    </form>
 
     <div class="col-lg-4 col-md-4 col-sm-4 text-left">
         <div style="padding-left:0px" class="col-lg-9">
@@ -32,7 +37,7 @@
                 </thead>
                 <tbody>
                     <tr ng-repeat="item in list.Cursuri" style="background-color:white">
-                        <td>{{item.Nume}}</td>
+                        <td>{item.Nume}</td>
                         <td>{{item.AnStudiu}}</td>
                         <td>{{item.Semestru}}</td>
                         <td>{{item.CodDisciplina}}</td>
@@ -46,3 +51,4 @@
         </div>
 
     </div>
+</div>

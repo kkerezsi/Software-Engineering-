@@ -13,10 +13,9 @@
     $scope.NumarCredite = "";
     $scope.Final = "";
     $scope.DataPromovarii = "";
-
-    //$scope.onClickOptional = function () {
-    //    $scope.optionalSelected = !$scope.optionalSelected;
-    //}
+    $scope.AnUniversitar1 = "";
+    $scope.AnUniversitar2 = "";
+    $scope.AnUniversitar3 = "";
 
     $scope.promise = studentFactory.getCourse().list;
     console.log($scope.promise);
@@ -33,6 +32,9 @@
         $scope.NumarCredite = $scope.promise[0].NumarCredite;
         $scope.Final = $scope.promise[0].Final;
         $scope.DataPromovarii = $scope.promise[0].DataPromovarii;
+        $scope.AnUniversitar1 = $scope.promise[1].An1;
+        $scope.AnUniversitar2 = $scope.promise[1].An2;
+        $scope.AnUniversitar3 = $scope.promise[1].An3;
     }
 
 })

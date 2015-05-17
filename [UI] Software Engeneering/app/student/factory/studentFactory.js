@@ -21,7 +21,12 @@
                                NumarCredite: "5",
                                Final: "True",
                                DataPromovarii: "14.05.2015",
-                           }]
+                           }],
+                       AniUniversitari: [{
+                           An1: "2013-2014",
+                           An2: "2014-2015",
+                           An3: "2015-1016",
+                       }]
                    }]
             }
         }
