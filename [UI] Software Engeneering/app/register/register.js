@@ -30,9 +30,9 @@
         var lastName = form.lastName.value;
         var email = form.email.value;
         var type = form.userType.value;
-
         if (firstName.length > 0 && lastName.length > 0 && email > 0)
-            registerFactory.saveUser({
+        console.log("-");
+        registerFactory.saveUser({
                 'name': firstName,
                 'firstName': firstName,
                 'lastName': lastName,
