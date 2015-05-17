@@ -7,6 +7,7 @@
 
     $scope.Studenti = [];
     $scope.Courses = [];
+    $scope.OrderBy = "Year"
 
     $scope.grantSelected = false;
 
@@ -35,6 +36,14 @@
                     $scope.Studenti = value.Studenti;
                 }
             })
+        }
+    }
+
+
+    $scope.changeOrder = function (order) {
+        if (order)
+        {
+            $scope.OrderBy = order;
         }
     }
 
