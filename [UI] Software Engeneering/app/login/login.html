@@ -1,49 +1,46 @@
-﻿<div class="navbar navbar-default">
-    <div class="container">
-        <a class="navbar-brand" href="#">Academic Info UBB</a>
-    </div>
-</div>
-
-<div class="container">
-
+﻿<div class="container">
     <div class="jumbotron text-center">
-        <h1>Welcome!</h1>
+        <h1>Welcome {{username}}!</h1>
         <h2>Facultatea de Matematica-Informatica</h2>
     </div>
     <hr>
 
-    <div class="jumbotron text-center" style="height:700px">
-
+    <div class="container" style="background-color:#eee;width:99%;">
+        <br />
+        <br />
         <div class="col-lg-4 col-md-4 col-sm-4 text-left">
-
-            <form name="LogIn">
-                <label>
-                    <p>User:</p>
-                    <input type="text" name="user" ng-model="user" style="height:50px">
-                </label>
-                <br />
-                <label>
-
-
-                    <p>Password:</p>
-                    <input type="password" name="password" ng-model="password" style="height:50px">
-                </label>
-                <br />
-                <br />
-            </form>
-
-
-            <div class="col-lg-10 text-center" style="padding-left:0px">
-                <button class="btn btn-primary col-lg-10" ng-click=""
-                        style="height:60px">
-                    Sign In
-                </button>
-            </div>
-
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 text-left">
+            <div class="row text-center" style="font-size:40px"><span class="glyphicon glyphicon-log-in"></span> Login </div>
             <br />
-
+            <form name="form" ng-submit="login()" role="form" method="post">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <i class="fa fa-key"></i>
+                    <input type="text" name="username" id="username" class="form-control" ng-model="username" required />
+                    <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Username is required</span>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <i class="fa fa-lock"></i>
+                    <input type="password" name="password" id="password" class="form-control" ng-model="password" required />
+                    <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" ng-disabled="form.$invalid || dataLoading" class="btn btn-danger col-lg-12 col-md-12 col-sm-12">Login</button>
+                    <img ng-if="dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+                    <div ng-if="failedLogin" style="color:red"> Invalid username or password !</div>
+                </div>
+            </form>
+            <br />
+            <br />
+            <br />
         </div>
     </div>
+</div>
 
+<br />
+<br />
+<br />
 
 

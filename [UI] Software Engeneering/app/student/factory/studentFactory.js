@@ -2,6 +2,7 @@
 
 .factory('studentFactory', function (Restangular) {
     return {
+<<<<<<< HEAD
         getCourse: function () {
             return {
                 list:
@@ -30,5 +31,19 @@
                    }]
             }
         }
+=======
+        getStudents: function () {
+            return Restangular.one('faculty').customGET('student/list/', {});
+        },
+        getStudent: function (idStudent) {
+            return Restangular.one('faculty').customGET('student/' + idStudent, {});
+        },
+        getCourse: function (idCourse) {
+            return Restangular.one('faculty').customGET('course/' + idCourse, {});
+        },
+        getCourses: function () {
+            return Restangular.one('faculty').customGET('course/list', {});
+        },
+>>>>>>> 4ebdce486cfce2264e05f833117f138f3fad4014
     }
 });

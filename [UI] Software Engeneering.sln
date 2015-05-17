@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "[UI] Software Engeneering", "[UI] Software Engeneering\[UI] Software Engeneering.csproj", "{ABD3C9D2-736A-4D79-954C-06CC6D616075}"
 EndProject
 Global

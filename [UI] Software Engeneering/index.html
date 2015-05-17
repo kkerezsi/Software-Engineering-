@@ -2,11 +2,26 @@
 <html ng-app="softwareEngeneering" ng-controller="AppCtrl">
 <head>
     <title></title>
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
     <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/site.css" rel="stylesheet" />
 </head>
 <body>
+    <div class="navbar navbar-default">
+        <div class="container">
+            <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-home"></span> Academic Info UBB</a>
+            <div class="text-right" style="padding-top:10px" ng-if="username != undefined && username != null">
+                <b> Logged as : <span class="glyphicon glyphicon-user"></span> {{username}} </b> &nbsp;&nbsp;&nbsp;
+                <button class="btn btn-info" ng-click="logout()">Logout</button>
+            </div>
+        </div>
+    </div>
+
     <div ng-view="">
+    </div>
+
+    <div class="navbar navbar-fixed-bottom panel-footer text-center">
+        Angry Weasels &trade; .All rights reserved &copy;
     </div>
 </body>
 </html>
@@ -15,11 +30,14 @@
 <script src="Scripts/angular-route.js"></script>
 <script src="Scripts/lodash.min.js"></script>
 <script src="Scripts/restangular.min.js"></script>
+<script src="Scripts/angular-cookies.js"></script>
+<script src="Scripts/angular-resource.js"></script>
+<script src="Scripts/ngStorage.js"></script>
 
 <script type="text/javascript" src="Scripts/angular-ui/ui-bootstrap.js"></script>
 <script type="text/javascript" src="Scripts/angular-ui/ui-bootstrap-tpls.js"></script>
 
-<script src="app/app.js"></script> 
+<script src="app/app.js"></script>
 <script src="app/configs.js"></script>
 
 <script src="app/homepage/homepage.js"></script>
@@ -39,3 +57,6 @@
 
 <script src="app/student/student.js"></script>
 <script src="app/student/factory/studentFactory.js"></script>
+
+<script src="app/admin/admin.js"></script>
+<script src="app/admin/factory/adminFactory.js"></script>

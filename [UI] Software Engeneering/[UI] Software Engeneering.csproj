@@ -71,6 +71,7 @@
     <Content Include="app\register\factory\registerFactory.js" />
     <Content Include="app\register\register.html" />
     <Content Include="app\register\register.js" />
+    <Content Include="app\student\contract.html" />
     <Content Include="app\student\factory\studentFactory.js" />
     <Content Include="app\student\student.html" />
     <Content Include="app\student\student.js" />
@@ -81,7 +82,11 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Images\blue_technology_abstract_circuitry_lines_hd-wallpaper-1797823.jpg" />
+    <Content Include="Images\logo_ubb_albastru.png" />
+    <Content Include="Images\web-page-backgrounds-1-widescreen-hd-background-and-wallpaper.jpg" />
     <Content Include="index.html" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
@@ -866,6 +871,7 @@
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\lodash.js" />
     <Content Include="Scripts\lodash.min.js" />
+    <Content Include="Scripts\ngStorage.js" />
     <Content Include="Scripts\npm.js" />
     <Content Include="Scripts\restangular.js" />
     <Content Include="Scripts\restangular.min.js" />
@@ -896,7 +902,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="app\administrativeStaff\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

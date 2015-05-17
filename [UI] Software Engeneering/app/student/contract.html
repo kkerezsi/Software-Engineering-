@@ -1,0 +1,103 @@
+﻿<div class="container">
+    <div class="jumbotron text-center">
+        <h1>{{Nume}}</h1>
+        <p class="lead">{{Cadru}}</p>
+        <h3>Student</h3>
+    </div>
+
+
+    <div class="container" style="background-color:#eee;width:99%;">
+        <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+
+            <div style="padding-left:0px">
+                <br />
+                <h1>Contract</h1>
+                <br />
+                <br />
+                <select class="btn btn-toolbar col-lg-6 col-md-6 col-sm-6"
+                        style="height:50px">
+                    <option value="">Select semester...</option>
+                </select>
+                <div class="col-lg-12">
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <h3>Available courses</h3>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th style="text-align:center">Cod Disciplina</th>
+                                    <th style="text-align:center">Curs</th>
+                                    <th style="text-align:center">Numar Credite</th>
+                                    <th style="text-align:center"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-if="!item.is_optional" ng-repeat="item in Courses" class="info" ng-model="item">
+                                    <td>{{item.id}}</td>
+                                    <td>{{item.name}}</td>
+                                    <td>{{item.credit_number}}</td>
+                                    <td><span class="glyphicon glyphicon-plus-sign" style="color:green" ng-click="AddCourse(item.name)"></span></td>
+                                </tr>
+                                <tr ng-if="item.is_optional" ng-repeat="item in Courses" class="success" ng-model="item">
+                                    <td>{{item.id}}</td>
+                                    <td>{{item.name}}</td>
+                                    <td>{{item.credit_number}}</td>
+                                    <td><span class="glyphicon glyphicon-plus-sign" style="color:green" ng-click="AddCourse(item.name)"></span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <h3>
+                            Your Courses
+                        </h3>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th style="text-align:center">Cod Disciplina</th>
+                                    <th style="text-align:center">Curs</th>
+                                    <th style="text-align:center">Numar Credite</th>
+                                    <th style="text-align:center"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr ng-if="!item.is_optional" ng-repeat="item in MyCourses" class="info" ng-model="item">
+                                    <td>{{item.id}}</td>
+                                    <td>{{item.name}}</td>
+                                    <td>{{item.credit_number}}</td>
+                                    <td><span class="glyphicon glyphicon-minus-sign" style="color:red" ng-click="RemoveCourse(item.name)"></span></td>
+                                </tr>
+                                <tr ng-if="item.is_optional" ng-repeat="item in MyCourses" class="success" ng-model="item">
+                                    <td>{{item.id}}</td>
+                                    <td>{{item.name}}</td>
+                                    <td>{{item.credit_number}}</td>
+                                    <td><span class="glyphicon glyphicon-minus-sign" style="color:red" ng-click="RemoveCourse(item.name)"></span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="row col-lg-12 col-md-12 col-sm-12 right">
+                <div class="col-lg-6 col-md-6 col-sm-6 left text-left">
+                    <h3 ng-if="TotalNumberOfCredits >= 30" class="colorGreen">Total number of Credits : {{TotalNumberOfCredits}}</h3>
+                    <h3 ng-if="TotalNumberOfCredits < 30" class="colorRed">Total number of Credits : {{TotalNumberOfCredits}}</h3>
+                    <br />
+                    <br />
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 right text-right" style="padding-top:20px">
+                    <div><a class="btn btn-info" style="color:black;" href="#/Contract"><b>Save Changes</b></a></div>
+                    <br />
+                    <br />
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+</div>
+<br />
+<br />
+<br />
+<br />
