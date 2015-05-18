@@ -57,6 +57,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\administrativeStaff\admin.html" />
+    <Content Include="app\administrativeStaff\admin.js" />
+    <Content Include="app\administrativeStaff\factory\adminFactory.js" />
     <Content Include="app\app.js" />
     <Content Include="app\chiefOfDepartment\chiefOfDepartment.html" />
     <Content Include="app\chiefOfDepartment\chiefOfDepartment.js" />
@@ -902,9 +905,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="app\administrativeStaff\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
