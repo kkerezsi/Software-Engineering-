@@ -3,13 +3,13 @@
 .factory('chiefFactory', function (Restangular) {
     return {
         getCourses: function (teacher) {
-            return Restangular.one('faculty').customGET('course/list' + teacher, {});
+            return Restangular.one('faculty').customGET('course/list/' + teacher, {});
         },
         approveOptionalCourse: function (course) {
-            return Restangular.one('faculty').customGET('course/optional' + course , {});
+            return Restangular.one('faculty').customGET('course/optional/' + course , {});
         },
         assignOptionalCourse: function () {
-            return Restangular.one('faculty').customGET('course/optional', {});
+            return Restangular.one('faculty').customGET('course/optional/', {});
         },
     }
 });
