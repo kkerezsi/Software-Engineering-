@@ -44,15 +44,15 @@
         </div>
 
 
-        <div class="col-lg-8 col-md-3 col-sm-4">
-            <p class="text-left col-lg-3">Student for: </p>
-            <select class="btn btn-toolbar col-lg-2" ng-options="cours.Id for cours in Courses"
+        <div class="col-lg-8 col-md-4 col-sm-4">
+            Ana
+            <select class="btn btn-toolbar col-lg-4" ng-options="cours.Id for cours in Courses"
                     ng-model="cours"
                     ng-change="changeCours(cours)">
                 <option value="">Cours</option> 
             </select>
-            <p class="text-left col-lg-2">by:</p>
-            <select class="btn btn-toolbar col-lg-2" ng-options="sortBy for sortBy in ['Year', 'Grade']"
+            
+            <select class="btn btn-toolbar col-lg-4" ng-options="sortBy for sortBy in ['Year', 'Grade']"
                     ng-model="sortBy"
                     ng-change="changeOrder(sortBy)">
                 <option value="">Sort By</option>
