@@ -40,6 +40,13 @@
                     <br />
                 </div>
 
+                <div ng-if="username != null && username != undefined && (currentUser.role == 0 || currentUser.role == 4)">
+                    <a class="btn btn-primary col-lg-10 col-md-10 col-sm-10" href="#/Admin">ADMIN</a>
+                    <br />
+                    <br />
+                    <br />
+                </div>
+
                 <div ng-if="username != null && username != undefined && (currentUser.role == 0 || currentUser.role == 3)">
                     <a class="btn btn-primary col-lg-10 col-md-10 col-sm-10" href="#/Student">STUDENT</a>
                 </div>

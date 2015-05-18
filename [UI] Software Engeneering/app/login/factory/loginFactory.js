@@ -21,6 +21,8 @@
                     return { success: username === 'teacher' && password === 'teacher' };
                 case "student":
                     return { success: username === 'student' && password === 'student' };
+                case "admin":
+                    return { success: username === 'admin' && password === 'admin' };
                 default:
                     return { success: false };
             }
@@ -39,6 +41,8 @@
                     return 2;
                 case "student":
                     return 3;
+                case "admin":
+                    return 4;
                 default:
                     return -1;
             }
