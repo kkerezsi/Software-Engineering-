@@ -1,42 +1,51 @@
 ﻿var teacherModule = angular.module('teacherModule', [])
 
-.controller('TeacherCtrl', function ($scope, teacherFactory) {
+.controller('CatalogCtrl', function ($scope, $rootScope, teacherFactory) {
+    $scope.Nume = "Teacher Name";
+    $scope.Cadru = "Matematica Informatica UBB"
+    teacherFactory.getStudents().then(function (students) {
+        angular.forEach(students, function (student, keyI) {
+            angular.forEach(student.courses, function (courseId, keyJ) {
 
-    $scope.studenti = [];
-    $scope.nume = "";
-    $scope.cadru = "";
+                teacherFactory.getCourse(courseId).then(function (courseData) {
+                    students[keyI].courses[keyJ] = {
+                        name: courseData.name,
+                        id: courseData.id,
+                        teacherId: courseData.teacher,
+                        semester: courseData.semester,
+                        year: courseData.year
+                    }
+                });
+            });
+        });
 
-    $scope.optionalSelected = false;
-    $scope.catalogSelected = true;
+        $scope.list = students;
 
-    $scope.onClickOptional = function () {
-        $scope.optionalSelected = !$scope.optionalSelected;
-    }
-    $scope.onClickCatalog = function () {
-        $scope.catalogSelected = !$scope.optionalSelected;
-    }
-
-    $scope.promise = teacherFactory.getGroups().list;
-
-    if ($scope.promise != null) {
-        $scope.groups = $scope.promise; //teachers in loc de groups
-        $scope.studenti = $scope.promise[0].Studenti;
-        $scope.nume = $scope.promise[0].Nume;
-        $scope.cadru = $scope.promise[0].Cadru;
-    }
-
-    $scope.changeGroup = function (group) {
-        if (group) {
-            var groups = $scope.groups;
-
-            angular.forEach($scope.groups, function (value, key) {
-                if (value.Id != null && value.Id == group) {
-                    $scope.studenti = value.Studenti;
-                    $scope.nume = value.Nume;
-                    $scope.cadru = value.Cadru;
-                }
-            })
-        }
-    }
-
+        console.log(students);
+    });
 })
+
+.controller('TeacherCtrl', function ($scope, $rootScope, teacherFactory, $filter) {
+
+    $scope.Nume = "Teacher Name";
+    $scope.Cadru = "Matematica Informatica UBB"
+    $scope.myGroups = [];
+    $scope.optCouses = []
+
+
+    $scope.getOptCourses = function () {
+        teacherFactory.getOptionalCourses().then(function (optCourses) {
+            $scope.optCourses = optCourses;
+        });
+    };
+
+    $scope.ProposeCourse = function (courseName) {
+        var newCourse = {
+            name: $scope.name,
+            description: $scope.description,
+            title: $scope.title,
+        };
+
+        $scope.people.push(person);
+    };
+});
