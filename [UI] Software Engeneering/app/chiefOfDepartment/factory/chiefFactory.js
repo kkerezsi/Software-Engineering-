@@ -13,6 +13,10 @@
         },
         getOptionalCourses: function () {
             return Restangular.one('faculty').customGET('course/optional/list', {});
+        },
+
+        approveOptionalCourse: function (ptionalCourse) {
+            return Restangular.one('faculty').customGET('course/optional/', optionalCourse, {})
         }
     }
 });

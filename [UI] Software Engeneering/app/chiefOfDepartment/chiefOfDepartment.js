@@ -12,8 +12,6 @@
         $scope.optionalSelected = !$scope.optionalSelected;
     }
 
-
-
     chiefFactory.getProfessors().then(function (professors) {
 
         $scope.teachers = professors;
