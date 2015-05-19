@@ -45,17 +45,10 @@
                     sum += valueG.grade;
                 });
                 if (nr > 0)
-                    stud.Grade = sum / nr;
+                    stud.grade = sum / nr;
                 else
-                    stud.Grade = 0;
+                    stud.grade = 0;
 
-                var max = 0;
-                angular.forEach(stud.courses, function (valueCours, keyCours) {
-                    if (valueCours.year > max)
-                        max = valueCours.year;
-                });
-
-                stud.Year = max;
 
                 $scope.students[keyC] = stud;
             });

@@ -46,7 +46,7 @@
 
         <div class="col-lg-8 col-md-3 col-sm-4">
             <p class="text-left col-lg-3">Student for: </p>
-            <select class="btn btn-toolbar col-lg-2" ng-options="cours.Id for cours in Courses"
+            <select class="btn btn-toolbar col-lg-2" ng-options="cours as cours.name for cours in Courses"
                     ng-model="cours"
                     ng-change="changeCours(cours)">
                 <option value="">Cours</option> 
@@ -73,11 +73,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="item in Studenti | orderBy:'-'+OrderBy" style="background-color:white">
-                            <td>{{item.Id}}</td>
-                            <td>{{item.Group}}</td>
+                        <tr ng-repeat="item in students | orderBy:'-'+OrderBy" style="background-color:white">
+
+                            <td>{{item.id}}</td>
+                            <td>{{item.group}}</td>
                             <td>{{item.Year}}</td>
-                            <td>{{item.Name}}</td>
+                            <td>{{item.name}}</td>
                             <td>{{item.Grade}}</td>
                         </tr>
                     </tbody>
