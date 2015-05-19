@@ -5,7 +5,7 @@ var roles = {
     Chief: 1,
     Teacher: 2,
     Student: 3,
-    Admin: 4,
+    AdminStaff: 4,
 };
 
 var routeForUnauthorizedAccess = '/LogIn';
@@ -24,7 +24,7 @@ var app = angular.module('softwareEngeneering', [
     'registerModule',
     'loginModule',
     'studentModule',
-    'adminModule',
+    'adminStaffModule',
 ])
 
 .config(function config($routeProvider, RestangularProvider, $httpProvider, configs) {
@@ -103,15 +103,15 @@ var app = angular.module('softwareEngeneering', [
             }
         })
 
-        .when('/Admin',
+        .when('/AdminStaff',
         {
-            controller: 'AdminCtrl',
-            templateUrl: 'app/administrativeStaff/admin.html',
+            controller: 'AdminStaffCtrl',
+            templateUrl: 'app/administrativeStaff/adminStaff.html',
             resolve: {
                 permission: function (authorizationService, $route) {
                     return authorizationService.permissionCheck([
                         roles.superUser,
-                        roles.Admin,
+                        roles.AdminStaff,
                     ]);
                 }
             }
@@ -197,7 +197,7 @@ var app = angular.module('softwareEngeneering', [
                     isChief: $rootScope.globals != undefined ? $rootScope.globals.currentUser.role == 1 ? true : false : false,
                     isTeacher: $rootScope.globals != undefined ? $rootScope.globals.currentUser.role == 2 ? true : false : false,
                     isStudent: $rootScope.globals != undefined ? $rootScope.globals.currentUser.role == 3 ? true : false : false,
-                    isAdmin: $rootScope.globals != undefined ? $rootScope.globals.currentUser.role == 4 ? true : false : false,
+                    isAdminStaff: $rootScope.globals != undefined ? $rootScope.globals.currentUser.role == 4 ? true : false : false,
                 };
 
                 parentPointer.permissionModel.isPermissionLoaded = true;
@@ -237,8 +237,8 @@ var app = angular.module('softwareEngeneering', [
                         }
                         break;
 
-                    case roles.Admin:
-                        if (permissionModel.permission.isAdmin) {
+                    case roles.AdminStaff:
+                        if (permissionModel.permission.isAdminStaff) {
                             ifPermissionPassed = true;
                         }
                         break;

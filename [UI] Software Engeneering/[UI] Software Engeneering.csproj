@@ -57,9 +57,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app\administrativeStaff\admin.html" />
-    <Content Include="app\administrativeStaff\admin.js" />
-    <Content Include="app\administrativeStaff\factory\adminFactory.js" />
+    <Content Include="app\administrativeStaff\adminStaff.html" />
+    <Content Include="app\administrativeStaff\adminStaff.js" />
+    <Content Include="app\administrativeStaff\factory\adminStaffFactory.js" />
     <Content Include="app\app.js" />
     <Content Include="app\chiefOfDepartment\chiefOfDepartment.html" />
     <Content Include="app\chiefOfDepartment\chiefOfDepartment.js" />
