@@ -6,18 +6,19 @@
     </div>
     <hr>
 
-    <div class="jumbotron text-center" style="height:300px">
+    <div class="container" style="background-color:#eee;width:99%;">
 
         <div class="col-lg-4 col-md-4 col-sm-4 text-left">
-            <select class="btn btn-toolbar col-lg-9" ng-options="teacher.Id as teacher.Nume for teacher in teachers"
-                ng-model="teacher"
-                ng-change="changeTeacher(teacher)">
+            <br />
+            <select class="btn btn-toolbar col-lg-9" ng-options="teacher.id as teacher.name for teacher in teachers"
+                    ng-model="teacher"
+                    ng-change="changeTeacher(teacher)">
                 <option value="">Select Teacher</option>
             </select>
             <br />
             <br />
             <br />
-            <div style="padding-left:0px"class="col-lg-9">
+            <div style="padding-left:0px" class="col-lg-9">
                 <table class="table table-hover table-bordered">
                     <thead style="background-color:grey;color:white">
                         <tr>
@@ -25,8 +26,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="item in tipuriDiscipline" style="background-color:white">
-                            <td>{{item.Nume}}</td>
+                        <tr ng-repeat="item in coursesByTeacher" style="background-color:white">
+                            <td>{{item.name}}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -46,7 +47,8 @@
             <br />
             <br />
             <div class="text-left">
-                <b  ng-if="optionalSelected" style="color:green;padding-left:0px;">A new optional has been selected!
+                <b ng-if="optionalSelected" style="color:green;padding-left:0px;">
+                    A new optional has been selected!
                 </b>
             </div>
         </div>
@@ -66,8 +68,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="item in tipuriDiscipline" style="background-color:white">
-                            <td>{{item.Nume}}</td>
+                        <tr ng-repeat="item in courses | orderBy:'-average'" style="background-color:white">
+                            <td>{{item.name}}</td>
                         </tr>
                     </tbody>
                 </table>
