@@ -2,14 +2,11 @@
 
 .factory('teacherFactory', function (Restangular) {
     return {
-        getStudents: function () {
-            return Restangular.one('faculty').customGET('student/list/', {});
+        getTeacher: function (idTeacher) {
+            return Restangular.one('faculty').customGET('professor/' + idTeacher, {});
         },
         getStudent: function (idStudent) {
             return Restangular.one('faculty').customGET('student/' + idStudent, {});
-        },
-        getCourse: function (idCourse) {
-            return Restangular.one('faculty').customGET('course/' + idCourse, {});
         },
         getCourses: function () {
             return Restangular.one('faculty').customGET('course/list', {});

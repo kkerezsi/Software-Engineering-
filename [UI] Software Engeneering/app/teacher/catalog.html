@@ -1,6 +1,6 @@
 ﻿<div class="container">
     <div class="jumbotron text-center">
-        <h1>{{username}}</h1>
+        <h1>{{Nume}}</h1>
         <p class="lead">{{Cadru}}</p>
         <h3>Teacher</h3>
     </div>
@@ -16,32 +16,27 @@
                 <br />
                 <br />
 
-                <select class="btn btn-toolbar col-lg-9" ng-options="group.id as group.number for group in groupss"
-                        ng-model="group"
-                        ng-change="changeGroup(group)">
-                    <option value="">Select group...</option>
+                <select class="btn btn-toolbar col-lg-9" ng-options="course.id as course.name for course in courses"
+                        ng-model="course"
+                        ng-change="changeCourse(course)">
+                    <option value="">Select course...</option>
                 </select>
+                
                 <table class="table">
                     <thead>
                         <tr>
                             <th style="text-align:center">Nume</th>
                             <th style="text-align:center">An Studiu</th>
-                            <th style="text-align:center">Semestru</th>
-                            <th style="text-align:center">Cod Disciplina</th>
                             <th style="text-align:center">Nota</th>
-                            <th style="text-align:center">Numar Credite</th>
                             <th style="text-align:center">Final</th>
                             <th style="text-align:center">Data Promovarii</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="item in listGroup" class="info">
-                            <td>{{item.number}}</td>
+                        <tr ng-repeat="item in studentsCourse" class="info">
+                            <td>{{item.numa}}</td>
                             <td>{{item.year}}</td>
-                            <td>course</td>
-                            <td>courseId</td>
                             <td>grade</td>
-                            <td>NrCredits</td>
                             <td>final</td>
                             <td>promovationDate</td>
                         </tr>

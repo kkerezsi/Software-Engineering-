@@ -2,20 +2,23 @@
 
 .controller('CatalogCtrl', function ($scope, $rootScope, teacherFactory) {
     $scope.Cadru = "Matematica Informatica UBB"
+    //$scope.userID = $rootScope.id;
 
-    teacherFactory.getGroups().then(function (groups) {
+    var teacherID = 2;
 
-        $scope.groupss = groups;
-    });
+    teacherFactory.getTeacher(teacherID).then(function (data) {
+        $scope.teacher = data;
+        $scope.courses = data.courses;
+        $scope.Nume = data.name;
+    })
+       
 
-    $scope.changeGroup = function (groupId) {
-        if (groupId) {
-            var groups = $scope.groupss;
+    $scope.changeCourse = function (courseId) {
+        if (courseId) {
+            angular.forEach($scope.teacher.courses, function (value, key) {
+                if (value.id != null && value.id == courseId) {
 
-            angular.forEach($scope.groupss, function (value, key) {
-                if (value.id != null && value.id == groupId) {
-                    $scope.listGroup = value.groups;
-
+                    $scope.studentsCourse = value.enrolled_students;
                 }
             })
         }
