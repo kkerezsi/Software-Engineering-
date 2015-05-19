@@ -11,6 +11,9 @@
         assignOptionalCourse: function () {
             return Restangular.one('faculty').customGET('course/optional/', {});
         },
+        getProfessors: function () {
+            return Restangular.one('faculty').customGET('professor/list', {});
+        }
     }
 });
 
