@@ -26,47 +26,35 @@
     });
 })
 
-.controller('TeacherCtrl', function ($scope, $rootScope, teacherFactory) {
+.controller('TeacherCtrl', function ($scope, $rootScope, teacherFactory, $filter) {
 
     $scope.Nume = "Teacher Name";
     $scope.Cadru = "Matematica Informatica UBB"
     $scope.myGroups = [];
+    $scope.optCouses = []
   
-    /*
-    $scope.getAllGroups = function () {
-        teacherFactory.getGroups().then(function (groups) {
-            $scope.myGroups = groups;
+    
+    $scope.getOptCourses = function () {
+        teacherFactory.getOptionalCourses().then(function (optCourses) {
+            $scope.optCourses = optCourses;
         });
-    };*/
-
-    /*
-    $scope.AddNewGroupCatalog = function (groupName) {
-        var myNewGroup = $filter('filter')($scope.myGroups, { name: groupName });
-        if (myNewGroup.length > 0) {
-
-            angular.forEach($scope.myGroups, function (group, index) {
-                if (group.name === groupName) {
-                    $scope.myGroups.splice(index, 1)
-                }
-            });
-
-            $scope.myGroups.push(myNewGroup[0]);
-        }
     };
 
-    $scope.RemoveGroupCatalog = function (groupName) {
-        var removedGroup = $filter('filter')($scope.myGroups, { name: groupName });
+    $scope.ProposeCourse = function (courseName) {
+        var newCourse = {
+            name: $scope.name,
+            description: $scope.description,
+            credit_number: $scope.creditNr,
+            year: $scope.year,
+            semester: $scope.semester,
+            teacher: $scope.teacher
+        };
 
-        if (removedGroup.length > 0) {
-            angular.forEach($scope.myGroups, function (group, index) {
-                if (group.name === groupName) {
-                    $scope.myGroups.splice(index, 1)
-                }
-            });
+        $scope.optCourses.push(newCourse);
+    };
 
-            $scope.myGroups.pop(removedGroup[0]);
-          
-        }
-        
-    };*/
+    
+   
+
+  
 });

@@ -16,21 +16,22 @@
                     <h3>Propose new course</h3>
                     <br />
                     <p>Course:</p>
-                    <input type="text" name="newCourse" ng-model="newC" class="form-control" required>
+                    <input type="text" name="newC" ng-model="name" class="form-control" required>
                     <div role="alert">
-                        <span class="error" ng-show="newCourseForm.newC.$error.required">
+                        <span class="error" ng-show="newCourseForm.name.$error.required">
                             Required!
                         </span>
                     </div>
                     <br />
                     <p>Description:</p>
-                    <input type="text" name="description" ng-model="descr" class="form-control"
+                    <input type="text" name="descr" ng-model="description" class="form-control"
                            ng-minlength="3" ng-maxlength="100">
+                    {{description}}
                     <div role="alert">
-                        <span class="error" ng-show="newCourse.descr.$error.minlength">
+                        <span class="error" ng-show="newCourse.description.$error.minlength">
                             Too short!
                         </span>
-                        <span class="error" ng-show="newCourse.descr.$error.maxlength">
+                        <span class="error" ng-show="newCourse.description.$error.maxlength">
                             Too long!
                         </span>
                     </div>
@@ -49,12 +50,13 @@
                     <input type="text" name="description" ng-model="semester" class="form-control"
                            ng-minlength="3" ng-maxlength="100">
                     <br />
-
-                    <input type="hidden" name="teacher" ng-model="teacher" value="test" />
+                    <p>Teacher:</p>
+                    <input type="text" name="teacher" ng-model="teacher" value="test" />
+                    <hr />
 
                     <br />
                     <div class="text-center" style="padding-left:0px">
-                        <button class="btn btn-primary col-lg-9" ng-click="onClickOptional()">Propose Course</button>
+                        <button class="btn btn-primary col-lg-9" ng-click="ProposeCourse()">Propose Course</button>
                     </div>
 
                     <br />

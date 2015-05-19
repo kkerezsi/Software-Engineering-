@@ -14,6 +14,12 @@
         getCourses: function () {
             return Restangular.one('faculty').customGET('course/list', {});
         },
+        getGroups: function () {
+            return Restangular.one('faculty').customGET('group/list', {});
+        },
+        getOptionalCourses: function () {
+            return Restangular.one('faculty').customGET('course/optional/list', {});
+        },
     }
    
 });
