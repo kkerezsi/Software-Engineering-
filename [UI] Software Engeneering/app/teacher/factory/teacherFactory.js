@@ -20,6 +20,15 @@
         getOptionalCourses: function () {
             return Restangular.one('faculty').customGET('course/optional/list', {});
         },
+        proposeCourse: function (dataToSend) {
+            return Restangular.one('faculty').post('course/optional/list/', dataToSend);
+        },
+        addGroup: function (dataToSend) {
+            return Restangular.one('faculty').post('group/list/', dataToSend);
+        },
+        addStudent: function (dataToSend) {
+        return Restangular.one('faculty').post('group/list/', dataToSend);
+        }
     }
    
 });

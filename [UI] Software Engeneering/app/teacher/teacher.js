@@ -1,7 +1,6 @@
 ﻿var teacherModule = angular.module('teacherModule', [])
 
 .controller('CatalogCtrl', function ($scope, $rootScope, teacherFactory) {
-
     $scope.Nume = "Teacher Name";
     $scope.Cadru = "Matematica Informatica UBB"
     teacherFactory.getStudents().then(function (students) {
@@ -32,29 +31,44 @@
     $scope.Cadru = "Matematica Informatica UBB"
     $scope.myGroups = [];
     $scope.optCouses = []
-  
-    
+
     $scope.getOptCourses = function () {
         teacherFactory.getOptionalCourses().then(function (optCourses) {
             $scope.optCourses = optCourses;
         });
     };
 
-    $scope.ProposeCourse = function (courseName) {
+    $scope.ProposeCourse = function () {
         var newCourse = {
             name: $scope.name,
             description: $scope.description,
             credit_number: $scope.creditNr,
             year: $scope.year,
             semester: $scope.semester,
-            teacher: $scope.teacher
+            teacher: $scope.teacher,
+            enrolled_students: [],
+            is_optional: true,
+            approval_status: 0,
+            group: 0,
+            votes: 0,
+            student_preferences: []
         };
 
-        $scope.optCourses.push(newCourse);
+        teacherFactory.ProposeCourse(newCourse);
     };
+})
 
-    
-   
+.controller('CreateCatalogCtrl', function ($scope, $rootScope, teacherFactory) {
+    $scope.Nume = "Teacher Name";
+    $scope.Cadru = "Matematica Informatica UBB"
 
-  
-});
+    $scope.addGroup = function () {
+        var newGroup = {
+            'number': $scope.number,
+            'year': $scope.year
+        }         
+        teacherFactory.addGroup(newGroup);
+    }
+
+        
+})

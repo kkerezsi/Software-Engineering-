@@ -72,6 +72,19 @@ var app = angular.module('softwareEngeneering', [
                 }
             }
         })
+         .when('/Teacher/CreateCatalog',
+        {
+            controller: 'CreateCatalogCtrl',
+            templateUrl: 'app/teacher/createCatalog.html',
+            resolve: {
+                permission: function (authorizationService, $route) {
+                    return authorizationService.permissionCheck([
+                        roles.superUser,
+                        roles.Teacher,
+                    ]);
+                }
+            }
+        })
          .when('/Register', {
              controller: 'RegisterCtrl',
              templateUrl: 'app/register/register.html',

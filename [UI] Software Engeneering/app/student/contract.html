@@ -11,10 +11,13 @@
 
             <div style="padding-left:0px">
                 <br />
-                <h1>Contract</h1>
+                <h1>Contract <span class="glyphicon glyphicon-calendar"></span></h1>
                 <br />
                 <br />
-                <select class="btn btn-toolbar col-lg-6 col-md-6 col-sm-6"
+                <select ng-options="semester.name for semester in semesters"
+                        ng-model="selectedSemester"
+                        ng-change="onChangeSemester()"
+                        class="btn btn-toolbar col-lg-6 col-md-6 col-sm-6"
                         style="height:50px">
                     <option value="">Select semester...</option>
                 </select>
@@ -85,8 +88,9 @@
                     <br />
                     <br />
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-6 right text-right" style="padding-top:20px">
-                    <div><a class="btn btn-info" style="color:black;" href="#/Contract"><b>Save Changes</b></a></div>
+                <div class="col-lg-6 col-md-6 col-sm-6 right text-right" style="padding-top:20px" ng-if="selectedSemester">
+                    <div><a class="btn btn-info" style="color:black;" ng-click="saveContract()"><b>Save Changes</b></a></div>
+                    <div ng-if="successfullSave" class="colorGreen">Successfully modified contract</div>
                     <br />
                     <br />
                 </div>
