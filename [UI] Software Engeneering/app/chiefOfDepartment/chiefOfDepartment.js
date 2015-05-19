@@ -9,7 +9,22 @@
     $scope.optionalSelected = false;
 
     $scope.onClickOptional = function () {
-        $scope.optionalSelected = !$scope.optionalSelected;
+        
+        if ($scope.CurrOptional.year == 2 && $scope.CurrOptional.semester == 2)
+            $scope.CurrOptional.group = 1;
+
+        if ($scope.CurrOptional.year == 3 && $scope.CurrOptional.semester == 1)
+            $scope.CurrOptional.group = 2;
+
+        if ($scope.CurrOptional.year == 3 && $scope.CurrOptional.semester == 2)
+            $scope.CurrOptional.group = 4;
+        
+        var respons = chiefFactory.setGroup($scope.CurrOptional);
+
+        if (respons)
+            $scope.optionalSelected = true;
+        else
+            $scope.optionalSelected = false;
     }
 
     chiefFactory.getProfessors().then(function (professors) {
@@ -46,11 +61,14 @@
 
 
         });
-
-        console.log($scope.courses);
     });
 
-
+    $scope.changeOptional = function (optional)
+    {
+        console.log($scope.optionalCourses);
+        if(optional)
+            $scope.CurrOptional = optional;
+    }
 
     $scope.changeTeacher = function (teacherId) {
         if (teacherId) {

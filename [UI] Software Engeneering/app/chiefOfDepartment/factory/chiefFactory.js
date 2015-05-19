@@ -17,6 +17,13 @@
 
         approveOptionalCourse: function (optionalCourse) {
             return Restangular.one('faculty').customGET('course/optional/', optionalCourse, {})
+        },
+
+        setGroup: function(dataToSend)
+        {
+            return Restangular.one('faculty').post('course/optional/list/', dataToSend);
         }
+
+
     }
 });
