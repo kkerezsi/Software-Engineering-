@@ -17,7 +17,6 @@
     }
 
     $scope.promise = teacherFactory.getGroups().list;
-    console.log($scope.promise);
 
     if ($scope.promise != null) {
         $scope.groups = $scope.promise; //teachers in loc de groups

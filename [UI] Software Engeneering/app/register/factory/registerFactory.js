@@ -27,7 +27,6 @@
         },
 
         saveUser: function (userToRegister) {
-            console.log(userToRegister);
             return Restangular.one('faculty').post('student/list/', userToRegister)
         }
     }
