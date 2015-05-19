@@ -34,7 +34,8 @@
 
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4">
-            <select class="btn btn-toolbar col-lg-9" ng-options="discipline.Id as discipline.Nume for discipline in tipuriDiscipline" ng-model="discipline">
+            <br />
+            <select class="btn btn-toolbar col-lg-9" ng-options="discipline.id as discipline.name for discipline in optionalCourses" ng-model="discipline">
                 <option value="">Select an Optional Course </option>
             </select>
             <br />
@@ -53,6 +54,7 @@
         </div>
 
         <div class="col-lg-4 col-md-4 col-sm-4 text-right">
+            <br/>
             <div class="col-lg-12">
                 <button class="btn btn-primary col-lg-9">Top of Diciplines</button>
             </div>

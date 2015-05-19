@@ -24,6 +24,10 @@
         $scope.enrolled = enrolled;
     });
 
+    chiefFactory.getOptionalCourses().then(function (optionalCourses) {
+        $scope.optionalCourses = optionalCourses;
+    });
+
     chiefFactory.getCourses().then(function (courses) {
 
         $scope.courses = courses;
@@ -62,5 +66,7 @@
             })
         }
     }
+
+  
 
 })
