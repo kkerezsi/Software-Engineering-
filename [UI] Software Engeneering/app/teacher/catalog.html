@@ -1,6 +1,6 @@
 ﻿<div class="container">
     <div class="jumbotron text-center">
-        <h1>{{Nume}}</h1>
+        <h1>{{username}}</h1>
         <p class="lead">{{Cadru}}</p>
         <h3>Teacher</h3>
     </div>
@@ -16,8 +16,9 @@
                 <br />
                 <br />
 
-                <select class="btn btn-toolbar col-lg-6 col-md-6 col-sm-6"
-                        style="height:50px">
+                <select class="btn btn-toolbar col-lg-9" ng-options="group.id as group.number for group in groupss"
+                        ng-model="group"
+                        ng-change="changeGroup(group)">
                     <option value="">Select group...</option>
                 </select>
                 <table class="table">
@@ -34,9 +35,9 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="item in list" class="info">
-                            <td>{{item.name}}</td>
-                            <td>{{item.line_of_study}}</td>
+                        <tr ng-repeat="item in listGroup" class="info">
+                            <td>{{item.number}}</td>
+                            <td>{{item.year}}</td>
                             <td>course</td>
                             <td>courseId</td>
                             <td>grade</td>

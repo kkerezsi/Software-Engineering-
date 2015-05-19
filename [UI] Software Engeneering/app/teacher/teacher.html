@@ -1,116 +1,43 @@
 ﻿
 <div class="container">
     <div class="jumbotron text-center">
-        <h1>{{Nume}}</h1>
+        <h1>{{username}}</h1>
         <p class="lead">{{Cadru}}</p>
         <h3>Teacher</h3>
     </div>
     <hr>
 
 
-    <div class="jumbotron text-center" style="height:800px">
+    <div class="jumbotron text-center" style="height:300px">
 
-        <div class="col-lg-4 col-md-4 col-sm-4 text-left">
-            <form name="form" class="">
-                <div class="col-lg-10">
-                    <h3>Propose new course</h3>
-                    <br />
-                    <p>Course:</p>
-                    <input type="text" name="newC" ng-model="name" class="form-control" required>
-                    <div role="alert">
-                        <span class="error" ng-show="newCourseForm.name.$error.required">
-                            Required!
-                        </span>
-                    </div>
-                    <br />
-                    <p>Description:</p>
-                    <input type="text" name="descr" ng-model="description" class="form-control"
-                           ng-minlength="3" ng-maxlength="100">
-                   
-                    <div role="alert">
-                        <span class="error" ng-show="newCourse.description.$error.minlength">
-                            Too short!
-                        </span>
-                        <span class="error" ng-show="newCourse.description.$error.maxlength">
-                            Too long!
-                        </span>
-                    </div>
-                    <br />
-
-                    <p>Credit Number:</p>
-                    <input type="text" name="description" ng-model="creditNr" class="form-control"
-                           ng-minlength="3" ng-maxlength="100">
-                    <br />
-
-                    <p>Year:</p>
-                    <input type="text" name="description" ng-model="year" class="form-control"
-                           ng-minlength="3" ng-maxlength="100">
-                    <br />
-                    <p>Semester:</p>
-                    <input type="text" name="description" ng-model="semester" class="form-control"
-                           ng-minlength="3" ng-maxlength="100">
-                    <br />
-                    <p>Teacher:</p>
-                    <input type="text" name="teacher" ng-model="teacher" value="test" />
-                    <hr />
-
-                    <br />
-                    <div class="text-center" style="padding-left:0px">
-                        <button class="btn btn-primary col-lg-9" ng-click="ProposeCourse()">Propose Course</button>
-                    </div>
-
-                    <br />
-                    <br />
-                    <br />
-                    <div style="padding-left:0px;" class="col-lg-12 col-md-12 col-sm-12 text-left text-nowrap">
-                        <b ng-if="optionalSelected" style="color:green;padding-left:0px;">
-                            A new course has been proposed!
-                            <br />
-                        </b>
-                    </div>
-                </div>
-            </form>
-             
-
-        </div> 
-
-        <div class="col-lg-4 col-md-4 col-sm-4 text-left">
+      
+        <div class="col-lg-4 col-md-4 col-sm-4 text-center">
             <hr />
+            <hr /> 
+            <div class="col-lg-12 text-center" style="padding-left:0px">
+                <div><a class="btn btn-primary col-lg-9" style="color:white;" href="#/Teacher/ProposeCourse">Propose Course</a></div>
+            </div>
+        </div>
+
+            
+        
+        <div class="col-lg-4 col-md-4 col-sm-4 text-center">
             <hr />
-            <hr />
-            <hr />
-            <hr />
+            <hr /> 
             <div class="col-lg-12 text-center" style="padding-left:0px">
                 <div><a class="btn btn-primary col-lg-9" style="color:white;" href="#/Teacher/Catalog">Catalogs</a></div>
             </div>
+        </div>
             
-                
-        
-
+      
+        <div class="col-lg-4 col-md-4 col-sm-4 text-center">
             <hr />
-            <hr />
-            <hr />
-
-
-            <form name="newCatalogForm">
-                <h3>New Catalog:</h3>
-                <input type="text" name="newGroup" ng-model="newG" class="form-control" required>
-
-                <div role="alert">
-                    <span class="error" ng-show="newCatalogForm.newG.$error.required">
-                        Required!
-                    </span>
-                </div>
-                <br />
-            </form>
-            <hr />
+            <hr /> 
             <div class="col-lg-12 text-center" style="padding-left:0px">
                 <div><a class="btn btn-primary col-lg-9" style="color:white;" href="#/Teacher/CreateCatalog">Create New Catalog</a></div>
             </div>
-            <br />
-            <br />
-            
         </div>
+
     </div>
 </div>
 

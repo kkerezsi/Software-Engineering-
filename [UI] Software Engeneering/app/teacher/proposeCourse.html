@@ -1,0 +1,125 @@
+﻿<div class="container">
+    <div class="jumbotron text-center">
+        <h1>{{username}}</h1>
+        <p class="lead">{{Cadru}}</p>
+        <h3>Teacher</h3>
+    </div>
+    <hr>
+
+
+    <div class="jumbotron text-center" style="height:600px">
+
+        <h3>Propose new course</h3>
+        <br />
+        <br />
+        
+        
+
+        <form name="form" class="">
+            
+            <div class="col-lg-4 col-md-4 col-sm-4 text-left" style="width:50px">
+            </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-4 text-left" style="width:400px">
+
+                    <br />
+                    <p>Course:</p>
+                    <p><input type="text" name="newC" ng-model="name" class="form-control"> </p>
+                    <div role="alert">
+                        <span class="error" ng-show="form.name.$error.required">
+                            Required!
+                        </span>
+                    </div>
+
+                    <br />
+                    <p>Description:</p>
+                    <input type="text" name="descr" ng-model="description" class="form-control"
+                           ng-minlength="1" ng-maxlength="100">
+
+                    <div role="alert">
+                        <span class="error" ng-show="form.description.$error.minlength">
+                            Too short!
+                        </span>
+                        <span class="error" ng-show="form.description.$error.maxlength">
+                            Too long!
+                        </span>
+                    </div>
+                    <br />
+
+                    <br />
+                    <p>Credit Number:</p>
+                    <input type="text" name="description" ng-model="creditNr" class="form-control"
+                           ng-minlength="1" ng-maxlength="100">
+                    <div role="alert">
+                        <span class="error" ng-show="form.creditNr.$error.minlength">
+                            Too short!
+                        </span>
+                        <span class="error" ng-show="form.creditNr.$error.maxlength">
+                            Too long!
+                        </span>
+                    </div>
+
+                </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-4 text-left" style="width:100px">
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-4 text-left" style="width:400px">
+
+                    <br />
+
+                    <p>Year:</p>
+                    <input type="text" name="description" ng-model="year" class="form-control"
+                           ng-minlength="1" ng-maxlength="100">
+                    <div role="alert">
+                        <span class="error" ng-show="form.year.$error.minlength">
+                            Too short!
+                        </span>
+                        <span class="error" ng-show="form.year.$error.maxlength">
+                            Too long!
+                        </span>
+                    </div>
+                    <br />
+
+                    <br />
+                    <p>Semester:</p>
+                    <input type="text" name="description" ng-model="semester" class="form-control"
+                           ng-minlength="1" ng-maxlength="100">
+                    <div role="alert">
+                        <span class="error" ng-show="form.semester.$error.minlength">
+                            Too short!
+                        </span>
+                        <span class="error" ng-show="form.semester.$error.maxlength">
+                            Too long!
+                        </span>
+                    </div>
+                     <br />
+
+                    <br />
+                    <br />
+
+                    <br />
+                   
+                    <div class="col-lg-4 col-md-4 col-sm-4 text-left">
+                        <a class="btn btn-info" style="color: black; width: 200px" ng-click="proposeCourse()"><b>Propose Course</b></a>
+                        <div ng-if="successfullyProposed" class="colorGreen">Successfully Proposed Course</div>
+                        <br />
+                        <br />
+                    </div>
+
+                </div>
+
+
+
+
+
+</form>
+
+
+        </div>
+
+    </div>
+
+
+
+
