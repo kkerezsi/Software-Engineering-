@@ -44,7 +44,8 @@
         </div>
 
 
-        <div class="col-lg-4 col-md-4 col-sm-4">
+        <div class="col-lg-8 col-md-4 col-sm-4">
+            Ana
             <select class="btn btn-toolbar col-lg-4" ng-options="cours.Id for cours in Courses"
                     ng-model="cours"
                     ng-change="changeCours(cours)">

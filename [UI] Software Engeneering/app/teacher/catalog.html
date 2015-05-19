@@ -16,31 +16,27 @@
                 <br />
                 <br />
 
-                <select class="btn btn-toolbar col-lg-6 col-md-6 col-sm-6"
-                        style="height:50px">
-                    <option value="">Select group...</option>
+                <select class="btn btn-toolbar col-lg-9" ng-options="course.id as course.name for course in courses"
+                        ng-model="course"
+                        ng-change="changeCourse(course)">
+                    <option value="">Select course...</option>
                 </select>
+                
                 <table class="table">
                     <thead>
                         <tr>
                             <th style="text-align:center">Nume</th>
                             <th style="text-align:center">An Studiu</th>
-                            <th style="text-align:center">Semestru</th>
-                            <th style="text-align:center">Cod Disciplina</th>
                             <th style="text-align:center">Nota</th>
-                            <th style="text-align:center">Numar Credite</th>
                             <th style="text-align:center">Final</th>
                             <th style="text-align:center">Data Promovarii</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="item in list" class="info">
-                            <td>{{item.name}}</td>
-                            <td>{{item.line_of_study}}</td>
-                            <td>course</td>
-                            <td>courseId</td>
+                        <tr ng-repeat="item in studentsCourse" class="info">
+                            <td>{{item.numa}}</td>
+                            <td>{{item.year}}</td>
                             <td>grade</td>
-                            <td>NrCredits</td>
                             <td>final</td>
                             <td>promovationDate</td>
                         </tr>
