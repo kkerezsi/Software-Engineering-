@@ -17,8 +17,8 @@
                 <br />
                 <div style="width:400px">
                     <select class="btn btn-toolbar col-lg-9" ng-options="course.id as course.name for course in courses"
-                            ng-model="course"
-                            ng-change="changeCourse(course)">
+                            ng-model="selectedCourse"
+                            ng-change="onChangeCourse()">
                         <option value="">Select course...</option>
                     </select>
                 </div>
@@ -26,10 +26,10 @@
                 <table class="table">
                     <thead>
                         <tr>\<th style="text-align:center">Id</th>
-                            <th style="text-align:center">Nume</th>
-                            <th style="text-align:center">Grupa</th>
+                            <th style="text-align:center">Name</th>
+                            <th style="text-align:center">Group</th>
                             <th style="text-align:center">Email</th>
-                            <th style="text-align:center">Nota</th>
+                            <th style="text-align:center">Grade</th>
                         
                            
                         </tr>
@@ -41,7 +41,7 @@
                             <td>{{item.group}}</td>
                             <td>{{item.email}}</td>
                             <td>{{item.grade}}</td>
-                           
+                          
                                                       
                         </tr>
                     </tbody>
@@ -96,9 +96,12 @@
                    
 
                     <a class="btn btn-info" style="color: black; width: 100px" ng-click="addGradeForStudent()"><b>Add Grade</b></a>
-                    <div ng-if="successfullyProposed" class="colorGreen">Adding Grade Succesfull</div>
+                    <div ng-if="successfullyProposed" class="colorGreen">Adding Grade Succesfully!</div>
                     <br />
                     <br />
+
+
+                 
 
                 </div>
                 <br />
