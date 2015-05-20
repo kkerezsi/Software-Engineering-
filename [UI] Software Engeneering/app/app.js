@@ -165,6 +165,7 @@ var app = angular.module('softwareEngeneering', [
         if (globals != null) {
             $rootScope.globals = globals;
             $scope.username = $rootScope.globals.currentUser.username;
+            console.log($rootScope.globals.currentUser);
         }
     }
 
