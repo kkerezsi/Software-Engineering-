@@ -25,6 +25,9 @@
         },
         addStudent: function (dataToSend) {
         return Restangular.one('faculty').post('group/list/', dataToSend);
+        },
+        getEnrolled: function () {
+            return Restangular.one('faculty').customGET('enrolled/list', {});
         }
     }
    

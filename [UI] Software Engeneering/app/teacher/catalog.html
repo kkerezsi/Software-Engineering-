@@ -12,15 +12,16 @@
             </div>
             <div style="padding-left:0px">
                 <br />
-                <h1>Groups</h1>
+                <h1>Students</h1>
                 <br />
                 <br />
-
-                <select class="btn btn-toolbar col-lg-9" ng-options="course.id as course.name for course in courses"
-                        ng-model="course"
-                        ng-change="changeCourse(course)">
-                    <option value="">Select course...</option>
-                </select>
+                <div style="width:400px">
+                    <select class="btn btn-toolbar col-lg-9" ng-options="course.id as course.name for course in courses"
+                            ng-model="course"
+                            ng-change="changeCourse(course)">
+                        <option value="">Select course...</option>
+                    </select>
+                </div>
                 
                 <table class="table">
                     <thead>
@@ -49,9 +50,60 @@
            
 
             <br />
-            <br />
-            <br />
-        </div>
+        
+        
+
+            <form name="form" class="">
+                <div class="col-lg-4 col-md-4 col-sm-4 text-left" style="width:200px">
+
+                   
+
+                    <p>Student ID:</p>
+                    <input type="text" name="studId" ng-model="studentId" class="form-control"
+                           ng-minlength="1" ng-maxlength="10" style="width:100px">
+                    <div role="alert">
+                        <span class="error" ng-show="form.studentId.$error.minlength">
+                            Too short!
+                        </span>
+                        <span class="error" ng-show="form.studentId.$error.maxlength">
+                            Too long!
+                        </span>
+                    </div>
+                   
+            </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-4 text-left" style="width:200px">
+
+                    <p>Grade:</p>
+                    <input type="text" name="gr" ng-model="grade" class="form-control"
+                           ng-minlength="1" ng-maxlength="3" style="width:100px">
+                    <div role="alert">
+                        <span class="error" ng-show="form.grade.$error.minlength">
+                            Too short!
+                        </span>
+                        <span class="error" ng-show="form.grade.$error.maxlength">
+                            Too long!
+                        </span>
+                    </div>
+                    <br />
+
+                  </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-4 text-left" style="width:200px">
+
+                    <br />
+               
+                   
+
+                    <a class="btn btn-info" style="color: black; width: 100px" ng-click="addGradeForStudent()"><b>Add Grade</b></a>
+                    <div ng-if="successfullyProposed" class="colorGreen">Adding Grade Succesfull</div>
+                    <br />
+                    <br />
+
+                </div>
+                <br />
+            </form>
+</div>
 
     </div>
 </div>
