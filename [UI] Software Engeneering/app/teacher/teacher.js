@@ -79,6 +79,7 @@
                 angular.forEach($scope.enrolled, function (enrole, key) {
                     if (enrole.id != null && enrole.course == course && enrole.student == studentId) {
                         enrole.grade = grade;
+                        $scope.gr = grade;
                         
                     }
                 })
