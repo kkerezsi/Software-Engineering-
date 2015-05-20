@@ -2,11 +2,9 @@
 
 .controller('CatalogCtrl', function ($scope, $rootScope, teacherFactory) {
     $scope.Cadru = "Matematica Informatica UBB"
-    //$scope.Nume = $rootScope.globals.currentUser.name;
     //$scope.userID = $rootScope.id;
 
-    var teacherID = 2;
-    //$rootScope.globals.currentUser.userId;
+    var teacherID = 3;
 
     teacherFactory.getTeacher(teacherID).then(function (data) {
         $scope.teacher = data;
@@ -18,7 +16,6 @@
 
     $scope.changeCourse = function (courseId) {
         if (courseId) {
-            //$scope.studentsCourse = [];
             angular.forEach($scope.teacher.courses, function (course, keyI) {
                 if (course.id != null && course.id == courseId) {
                     $scope.enrolledStudents = course.enrolled_students;
@@ -29,7 +26,7 @@
                                 $scope.student = data;
                                 $scope.grades = data.grades;
                                 //
-                                angular.forEach($scope.grades, function (grad, keyZ) {
+                                angular.forEach($scope.grades, function (grad, keyJ) {
                                     if (grad.id != null && grad.course == courseId) {
                                         $scope.gr = grad.grade;
                                     }
@@ -52,41 +49,33 @@
                    //
                 }
             })
-        } else {
-            $scope.studentsCourse = [];
         }
-    }
-
-    $scope.onChangeCourse = function () {
-        $scope.studentsCourse = [];
-        if ($scope.selectedCourse)
-            $scope.changeCourse($scope.selectedCourse);
-        else
-            $scope.changeCourse(undefined);
     }
 
     $scope.addGradeForStudent = function () {
         var studentId = $scope.studentId;
         var grade = $scope.grade;
-        var course = $scope.selectedCourse;
-       // $scope.enrolled = [];
+        var course = $scope.course;
+        $scope.enrolled = [];
 
-        if (studentId.length > 0 && grade.length > 0) {
-            teacherFactory.getEnrolled().then(function (dataEn) {
-                $scope.enrolled = dataEn;
-            
+        if (studentId.length > 0 && grade.length > 0 && course.length > 0) {
+            teacherFactory.getEnrolled().then(function (data) {
+                $scope.enrolled = data;
+                
                 //
                 angular.forEach($scope.enrolled, function (enrole, key) {
-                    if (enrole.id != null && enrole.course == course && enrole.student == studentId) {
+                    if (enrole.id != null && enrole.course == course && enrole.semester == studentId) {
                         enrole.grade = grade;
-                        
                     }
                 })
                 //
-            })
-         }
+            }
+            }
 
-        
+        if (response)
+            $scope.successfullyProposed = true;
+        else
+            $scope.successfullyProposed = undefined;
        
     }
 
@@ -152,13 +141,12 @@
                 'votes': 0,
                 'student_preferences': []
             })
-            if (response)
-                $scope.successfullyProposed = true;
-            else
-                $scope.successfullyProposed = false;
         }
 
-        
+        if (response)
+            $scope.successfullyProposed = true;
+        else
+            $scope.successfullyProposed = undefined;
     }
 
     
