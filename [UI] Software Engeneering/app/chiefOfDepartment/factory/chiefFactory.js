@@ -15,7 +15,7 @@
             return Restangular.one('faculty').customGET('course/optional/list/', {});
         },
 
-        approveOptionalCourse: function (ptionalCourse) {
+        approveOptionalCourse: function (optionalCourse) {
             return Restangular.one('faculty').customGET('course/optional/', optionalCourse, {})
         }
     }
