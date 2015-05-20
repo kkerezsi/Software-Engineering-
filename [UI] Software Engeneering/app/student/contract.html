@@ -38,13 +38,13 @@
                                     <td>{{item.id}}</td>
                                     <td>{{item.name}}</td>
                                     <td>{{item.credit_number}}</td>
-                                    <td><span class="glyphicon glyphicon-plus-sign" style="color:green" ng-click="AddCourse(item.name)"></span></td>
+                                    <td><span class="glyphicon glyphicon-plus-sign" style="color:green" ng-click="AddCourse(item.name,selectedSemester)"></span></td>
                                 </tr>
                                 <tr ng-if="item.is_optional" ng-repeat="item in Courses" class="success" ng-model="item">
                                     <td>{{item.id}}</td>
                                     <td>{{item.name}}</td>
                                     <td>{{item.credit_number}}</td>
-                                    <td><span class="glyphicon glyphicon-plus-sign" style="color:green" ng-click="AddCourse(item.name)"></span></td>
+                                    <td><span class="glyphicon glyphicon-plus-sign" style="color:green" ng-click="AddCourse(item.name,selectedSemester)"></span></td>
                                 </tr>
                             </tbody>
                         </table>

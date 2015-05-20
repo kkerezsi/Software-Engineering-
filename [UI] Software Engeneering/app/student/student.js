@@ -5,7 +5,7 @@
     $scope.Nume = "Student Name";
     $scope.Cadru = "Matematica Informatica UBB";
 
-    var hardcodedStudentId = 1;
+    var hardcodedStudentId = $rootScope.globals.currentUser.userId;
 
     studentFactory.getStudent(hardcodedStudentId).then(function (data) {
         $scope.student = data;
@@ -51,7 +51,7 @@
     $scope.MyCourses = [];
     $scope.TotalNumberOfCredits = 0;
 
-    var hardcodedStudentId = 1;
+    var hardcodedStudentId = $rootScope.globals.currentUser.userId;
 
     studentFactory.getStudent(hardcodedStudentId).then(function (data) {
         $scope.student = data;
@@ -63,7 +63,7 @@
             $scope.Courses = [];
         }
         else {
-            studentFactory.getEnroledCourses(semester, 1).then(function (enroledCourses) {
+            studentFactory.getEnroledCourses(semester, $rootScope.globals.currentUser.userId).then(function (enroledCourses) {
                 $scope.EnroledCourses = enroledCourses;
                 studentFactory.getCourses(semester).then(function (courses) {
                     $scope.Courses = courses;
@@ -89,6 +89,7 @@
             angular.forEach($scope.Courses, function (course, index) {
                 if (course.name === courseName) {
                     $scope.Courses.splice(index, 1)
+                    return;
                 }
             });
 
@@ -103,7 +104,7 @@
         if (removedCourse.length > 0) {
             angular.forEach($scope.MyCourses, function (course, index) {
                 if (course.name === courseName) {
-                    $scope.MyCourses.splice(index, 1)
+                    $scope.MyCourses.splice(index, $rootScope.globals.currentUser.userId)
                 }
             });
 
@@ -118,7 +119,7 @@
         if (removedCourse.length > 0) {
             angular.forEach(stack, function (course, index) {
                 if (course.name === courseName) {
-                    stack.splice(index, 1)
+                    stack.splice(index, $rootScope.globals.currentUser.userId)
                 }
             });
 
