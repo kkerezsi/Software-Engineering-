@@ -4,10 +4,11 @@
     $scope.Cadru = "Matematica Informatica UBB"
     //$scope.userID = $rootScope.id;
 
-    var teacherID = 2;
+    var teacherID = 3;
 
     teacherFactory.getTeacher(teacherID).then(function (data) {
         $scope.teacher = data;
+        $scope.studentsCourse = [];
         $scope.courses = data.courses;
         $scope.Nume = data.name;
     })
@@ -15,10 +16,37 @@
 
     $scope.changeCourse = function (courseId) {
         if (courseId) {
-            angular.forEach($scope.teacher.courses, function (value, key) {
-                if (value.id != null && value.id == courseId) {
+            angular.forEach($scope.teacher.courses, function (course, keyI) {
+                if (course.id != null && course.id == courseId) {
+                    $scope.enrolledStudents = course.enrolled_students;
+                    //
+                    angular.forEach($scope.enrolledStudents, function (studId, keyJ) {
+                        if (studId != null) {
+                            teacherFactory.getStudent(studId).then(function (data) {
+                                $scope.student = data;
+                                $scope.grades = data.grades;
+                                //
+                                angular.forEach($scope.grades, function (grad, keyJ) {
+                                    if (grad.id != null && grad.course == courseId) {
+                                        $scope.gr = grad.grade;
+                                    }
+                                })
+                                //
+                                $scope.studentsCourse.push({
+                                    "id": $scope.student.id,
+                                    "name": $scope.student.name,
+                                    "group": $scope.student.group,
+                                    "email": $scope.student.email,
+                                    "grade": $scope.gr
+                                });
+                                //$scope.studentsCourse.push($scope.student);
+                            });
+                            
 
-                    $scope.studentsCourse = value.enrolled_students;
+
+                        }
+                    })
+                   //
                 }
             })
         }

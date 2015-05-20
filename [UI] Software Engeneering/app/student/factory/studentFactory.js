@@ -26,7 +26,7 @@
             });
         },
         enrolStudent: function (dataToSend) {
-            return Restangular.one('faculty').post('enrolled/list/', dataToSend);
+            return Restangular.one('faculty').customPUT('enrolled/list/', dataToSend);
         }
         
     }
