@@ -78,7 +78,10 @@
     <Content Include="app\student\factory\studentFactory.js" />
     <Content Include="app\student\student.html" />
     <Content Include="app\student\student.js" />
+    <Content Include="app\teacher\catalog.html" />
+    <Content Include="app\teacher\createCatalog.html" />
     <Content Include="app\teacher\factory\teacherFactory.js" />
+    <Content Include="app\teacher\proposeCourse.html" />
     <Content Include="app\teacher\teacher.html" />
     <Content Include="app\teacher\teacher.js" />
     <Content Include="Content\bootstrap-theme.css" />

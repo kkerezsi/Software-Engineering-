@@ -59,6 +59,45 @@ var app = angular.module('softwareEngeneering', [
                 }
             }
         })
+          .when('/Teacher/Catalog',
+        {
+            controller: 'CatalogCtrl',
+            templateUrl: 'app/teacher/catalog.html',
+            resolve: {
+                permission: function (authorizationService, $route) {
+                    return authorizationService.permissionCheck([
+                        roles.superUser,
+                        roles.Teacher,
+                    ]);
+                }
+            }
+        })
+        .when('/Teacher/ProposeCourse',
+        {
+            controller: 'ProposeCourseCtrl',
+            templateUrl: 'app/teacher/proposeCourse.html',
+            resolve: {
+                permission: function (authorizationService, $route) {
+                    return authorizationService.permissionCheck([
+                        roles.superUser,
+                        roles.Teacher,
+                    ]);
+                }
+            }
+        })
+         .when('/Teacher/CreateCatalog',
+        {
+            controller: 'CreateCatalogCtrl',
+            templateUrl: 'app/teacher/createCatalog.html',
+            resolve: {
+                permission: function (authorizationService, $route) {
+                    return authorizationService.permissionCheck([
+                        roles.superUser,
+                        roles.Teacher,
+                    ]);
+                }
+            }
+        })
          .when('/Register', {
              controller: 'RegisterCtrl',
              templateUrl: 'app/register/register.html',

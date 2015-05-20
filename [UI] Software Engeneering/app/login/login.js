@@ -4,7 +4,6 @@
     $scope.isSubmited = false;
 
     $scope.login = function () {
-        console.log($rootScope.globals);
         var username = form.username.value;
         var password = form.password.value;
 

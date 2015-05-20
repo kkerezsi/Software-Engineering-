@@ -11,8 +11,23 @@
         getCourse: function (idCourse) {
             return Restangular.one('faculty').customGET('course/' + idCourse, {});
         },
-        getCourses: function () {
-            return Restangular.one('faculty').customGET('course/list', {});
+        getCourses: function (semester) {
+            return Restangular.one('faculty').customGET('course/list', {
+                'semester': semester
+            });
         },
+        getYears: function () {
+            return Restangular.one('faculty').customGET('year/list', {});
+        },
+        getEnroledCourses: function(semester,student){
+            return Restangular.one('faculty').customGET('enrolled/list', {
+                'semester': semester,
+                'student' : student,
+            });
+        },
+        enrolStudent: function (dataToSend) {
+            return Restangular.one('faculty').post('enrolled/list/', dataToSend);
+        }
+        
     }
 });

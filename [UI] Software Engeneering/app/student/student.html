@@ -12,37 +12,35 @@
             </div>
             <div style="padding-left:0px">
                 <br />
-                <h1>Courses</h1>
+                <h1>Courses <span class="glyphicon glyphicon-king"></span></h1>
                 <br />
                 <br />
 
-                <select class="btn btn-toolbar col-lg-6 col-md-6 col-sm-6"
+                <select ng-options="semester.name for semester in semesters"
+                        ng-model="selectedSemester"
+                        class="btn btn-toolbar col-lg-6 col-md-6 col-sm-6"
                         style="height:50px">
                     <option value="">Select semester...</option>
                 </select>
                 <table class="table">
                     <thead >
                         <tr >
-                            <th style="text-align:center">Nume</th>
-                            <th style="text-align:center">An Studiu</th>
-                            <th style="text-align:center">Semestru</th>
-                            <th style="text-align:center">Cod Disciplina</th>
-                            <th style="text-align:center">Nota</th>
-                            <th style="text-align:center">Numar Credite</th>
-                            <th style="text-align:center">Final</th>
-                            <th style="text-align:center">Data Promovarii</th>
+                            <th style="text-align:center">Line of study</th>
+                            <th style="text-align:center">Course</th>
+                            <th style="text-align:center">Course Id</th>
+                            <th style="text-align:center">Grade</th>
+                            <th style="text-align:center">Number of Credits</th>
+                            <th style="text-align:center">Promotion Date</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="item in list" class="info">
-                            <td>{{item.name}}</td>
+                        <tr ng-repeat="item in list" class="info" ng-model="item" ng-if="item.semester == selectedSemester.id || !selectedSemester">
                             <td>{{item.line_of_study}}</td>
-                            <td>course</td>
-                            <td>courseId</td>
-                            <td>grade</td>
-                            <td>NrCredits</td>
-                            <td>final</td>
-                            <td>promovationDate</td>
+                            <td>{{item.course}}</td>
+                            <td>{{item.courseId}}</td>
+                            <td>{{item.grade}}</td>
+                            <td>{{item.nrCredits}}</td>
+                            <td>{{item.promovationDate}}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -50,7 +48,6 @@
             <div class="row col-lg-12 col-md-12 col-sm-12 text-left">
                 <div ><a class="btn btn-info" style="color:black;" href="#/Student/Contract"><b>Contracts </b></a></div>
             </div>
-            
             <br />
             <br />
             <br />

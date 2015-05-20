@@ -12,8 +12,6 @@
         $scope.optionalSelected = !$scope.optionalSelected;
     }
 
-
-
     chiefFactory.getProfessors().then(function (professors) {
 
         $scope.teachers = professors;
@@ -22,6 +20,10 @@
     chiefFactory.getEnrolled().then(function (enrolled) {
 
         $scope.enrolled = enrolled;
+    });
+
+    chiefFactory.getOptionalCourses().then(function (optionalCourses) {
+        $scope.optionalCourses = optionalCourses;
     });
 
     chiefFactory.getCourses().then(function (courses) {
@@ -62,5 +64,7 @@
             })
         }
     }
+
+  
 
 })
