@@ -30,6 +30,9 @@ var app = angular.module('softwareEngeneering', [
 .config(function config($routeProvider, RestangularProvider, $httpProvider, configs) {
     RestangularProvider.setBaseUrl(configs.baseUrl);
 
+    $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
+    $httpProvider.defaults.xsrfCookieName = 'csrftoken';
+
     $routeProvider
         .when('/', {
             controller: 'HomepageCtrl',
@@ -101,14 +104,14 @@ var app = angular.module('softwareEngeneering', [
          .when('/Register', {
              controller: 'RegisterCtrl',
              templateUrl: 'app/register/register.html',
-             resolve: {
-                 permission: function (authorizationService, $route) {
-                     return authorizationService.permissionCheck([
-                         roles.superUser,
-                         roles.Teacher
-                     ]);
-                 }
-             }
+             //resolve: {
+             //    permission: function (authorizationService, $route) {
+             //        return authorizationService.permissionCheck([
+             //            roles.superUser,
+             //            roles.Teacher
+             //        ]);
+             //    }
+             //}
          })
         .when('/LogIn',
         {
@@ -192,7 +195,7 @@ var app = angular.module('softwareEngeneering', [
 
 })
 
-.factory('authorizationService', function ($resource, $q, $rootScope, $location) {
+.factory('authorizationService', function ($resource, $q, $rootScope, $location,configs) {
     return {
         // We would cache the permission for the session,
         //to avoid roundtrip to server
@@ -220,16 +223,16 @@ var app = angular.module('softwareEngeneering', [
                 //if permission is not obtained yet, we will get it from  server.
                 // 'api/permissionService' is the path of server web service , used for this example.
 
-                //$resource('/api/permissionService').get().$promise.then(function (response) {
+                //$resource(configs.baseUrl + 'account/login/').get().$promise.then(function (response) {
                 //    //when server service responds then we will fill the permission object
                 //    parentPointer.permissionModel.permission = response;
 
-                //    //Indicator is set to true that permission object is filled and 
-                //    //can be re-used for subsequent route request for the session of the user
-                //    parentPointer.permissionModel.isPermissionLoaded = true;
+                ////    //Indicator is set to true that permission object is filled and 
+                ////    //can be re-used for subsequent route request for the session of the user
+                ////    parentPointer.permissionModel.isPermissionLoaded = true;
 
-                //    //Check if the current user has required role to access the route
-                //    parentPointer.getPermission(parentPointer.permissionModel, roleCollection, deferred);
+                ////    //Check if the current user has required role to access the route
+                ////    parentPointer.getPermission(parentPointer.permissionModel, roleCollection, deferred);
                 //});
 
                 parentPointer.permissionModel.permission = {
@@ -243,6 +246,7 @@ var app = angular.module('softwareEngeneering', [
                 parentPointer.permissionModel.isPermissionLoaded = true;
                 parentPointer.getPermission(parentPointer.permissionModel, roleCollection, deferred);
             }
+
             return deferred.promise;
         },
 

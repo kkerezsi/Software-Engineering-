@@ -9,8 +9,15 @@
 
         if (username && password) {
             loginFactory.Login(username, password, function (response) {
-                if (response.success) {
-                    loginFactory.SetCredentials(username, password, response.roleType);
+                var newResponse = {
+                    success : true
+                }
+
+                if (!response || response.id == null)
+                    newResponse = { success: false };
+
+                if (newResponse) {
+                    loginFactory.SetCredentials(username, password, response.role);
                     if ($rootScope.globals.currentUser) {
                         $scope.getCookie();
                         $location.path('/');

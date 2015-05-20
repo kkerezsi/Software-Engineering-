@@ -1,6 +1,6 @@
 ﻿loginModule
 
-.factory('loginFactory', function (Restangular, $cookieStore, Base64, $http, $rootScope, $timeout) {
+.factory('loginFactory', function (Restangular, $cookieStore, Base64, $http, $rootScope, $timeout,configs) {
     var service = {};
 
     service.Login = function (username, password, callback) {
@@ -48,26 +48,28 @@
             }
         };
 
-        $timeout(function () {
-            var response = getDummyResponse(username, password)
+        //$timeout(function () {
+        //    var response = getDummyResponse(username, password)
 
-            if (!response.success) {
-                response.message = 'Username or password is incorrect';
-            }
-            else {
-                response.roleType = getDummyRole(username);
-            }
+        //    if (!response.success) {
+        //        response.message = 'Username or password is incorrect';
+        //    }
+        //    else {
+        //        response.roleType = getDummyRole(username);
+        //    }
 
-            callback(response);
-        }, 1000);
+        //    callback(response);
+        //}, 1000);
 
 
         /* Use this for real authentication
          ----------------------------------------------*/
-        //$http.post('/api/authenticate', { username: username, password: password })
-        //    .success(function (response) {
-        //        callback(response);
-        //    });
+        $http.post(configs.baseUrl + 'account/login/', { username: username, password: password }, { 'X-CSRFToken': 'csrftoken' })
+            .success(function (response) {
+                console.log(response);
+                callback(response);
+            }
+        );
 
     };
 
