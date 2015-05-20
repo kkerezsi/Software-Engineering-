@@ -24,21 +24,24 @@
                 
                 <table class="table">
                     <thead>
-                        <tr>
+                        <tr>\<th style="text-align:center">Id</th>
                             <th style="text-align:center">Nume</th>
-                            <th style="text-align:center">An Studiu</th>
+                            <th style="text-align:center">Grupa</th>
+                            <th style="text-align:center">Email</th>
                             <th style="text-align:center">Nota</th>
-                            <th style="text-align:center">Final</th>
-                            <th style="text-align:center">Data Promovarii</th>
+                        
+                           
                         </tr>
                     </thead>
                     <tbody>
                         <tr ng-repeat="item in studentsCourse" class="info">
-                            <td>{{item.numa}}</td>
-                            <td>{{item.year}}</td>
-                            <td>grade</td>
-                            <td>final</td>
-                            <td>promovationDate</td>
+                            <td>{{item.id}}</td>
+                            <td>{{item.name}}</td>
+                            <td>{{item.group}}</td>
+                            <td>{{item.email}}</td>
+                            <td>{{item.grade}}</td>
+                           
+                                                      
                         </tr>
                     </tbody>
                 </table>
