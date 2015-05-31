@@ -28,7 +28,11 @@
         },
         getEnrolled: function () {
             return Restangular.one('faculty').customGET('enrolled/list/', {});
+        },
+        addGradeForStudent: function (data) {
+            return Restangular.all('faculty/enrolled/' + data.pk + '/').customPUT(data);
         }
+
     }
    
 });

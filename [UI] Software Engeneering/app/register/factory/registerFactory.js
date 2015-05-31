@@ -27,7 +27,28 @@
         },
 
         saveUser: function (userToRegister) {
-            return Restangular.one('faculty').post('student/list/', userToRegister)
+            switch (userToRegister.type) {
+                case 1: {
+                    //cheaf
+                    return Restangular.one('faculty').post('chief/list/', userToRegister)
+                }
+                case 2: {
+                    //teacer
+                    return Restangular.one('faculty').post('teacher/list/', userToRegister)
+                }
+
+                case 3: {
+                    return Restangular.one('faculty').post('student/list/', userToRegister)
+                    //student
+                }
+                case 4: {
+                    return Restangular.one('faculty').post('staff/list/', userToRegister)
+                    //admin
+                }
+                default: {
+                    return -1;
+                }
+            }
         }
     }
 });

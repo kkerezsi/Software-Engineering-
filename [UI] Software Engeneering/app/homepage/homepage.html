@@ -20,20 +20,20 @@
                 <br />
                 <br />
 
-                <div ng-if="username != null && username != undefined && (currentUser.role == 0 || currentUser.role == 1)">
+                <div ng-if="username != null && username != undefined && (currentUser.role == 0 || currentUser.role == 1 || currentUser.role == 2 )">
                     <a class="btn btn-primary col-lg-10 col-md-10 col-sm-10" href="#/Chief">CHIEF OF DEPARTMENT</a>
                     <br />
                     <br />
                     <br />
                 </div>
 
-                <div>
+                <div ng-if="username != null && username != undefined && (currentUser.role == 0 || currentUser.role == 4 )">
                     <a class="btn btn-primary col-lg-10 col-md-10 col-sm-10" href="#/Register">REGISTER USER</a>
                     <br />
                     <br />
                     <br />
                 </div>
-                <div ng-if="username != null && username != undefined && (currentUser.role == 0 || currentUser.role == 2)">
+                <div ng-if="username != null && username != undefined && (currentUser.role == 0 || currentUser.role == 1 || currentUser.role == 2)">
                     <a class="btn btn-primary col-lg-10 col-md-10 col-sm-10" href="#/Teacher">TEACHER</a>
                     <br />
                     <br />
