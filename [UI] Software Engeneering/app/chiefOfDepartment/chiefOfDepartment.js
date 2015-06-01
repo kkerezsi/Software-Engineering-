@@ -8,41 +8,48 @@
 
     $scope.optionalSelected = false;
 
-    $scope.getGroupForOptionals(min, max) = function() {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
-
     $scope.onClickOptional = function () {
         
         if ($scope.CurrOptional.year == 2 && $scope.CurrOptional.semester == 2)
             $scope.CurrOptional.group = 1;
 
         if ($scope.CurrOptional.year == 3 && $scope.CurrOptional.semester == 1)
-            $scope.CurrOptional.group = $scope.getGroupForOptionals(2,3);
+            $scope.CurrOptional.group = 3;//$scope.getGroupForOptionals(2,3);
 
         if ($scope.CurrOptional.year == 3 && $scope.CurrOptional.semester == 2)
-            $scope.CurrOptional.group = $scope.getGroupForOptionals(4,6);
+            $scope.CurrOptional.group =5;
         
-        console.log($scope.CurrOptional);
-        var dataToSend = {
-            "pk" : $scope.CurrOptional.id,
+//<<<<<<< HEAD
+//        console.log($scope.CurrOptional);
+//        var data = {
+//            "pk" : $scope.CurrOptional.id,
+//            "teacher": $scope.CurrOptional.teacher,
+//            "name": $scope.CurrOptional.name,
+//            "credit_number": $scope.CurrOptional.credit_number,
+//            "year": $scope.CurrOptional.year,
+//            "semester": $scope.CurrOptional.semester,
+//            "description": $scope.CurrOptional.description,
+//            "aproval_status": $scope.CurrOptional.aproval_status,
+//            "group": $scope.CurrOptional.group,
+//            "votes": $scope.CurrOptional.votes
+//        };
+
+
+
+//        var respons = chiefFactory.setGroup(dataToSend, $scope.CurrOptional.id);
+        console.log(data);
+        var respons = chiefFactory.setGroup({
+            "pk": $scope.CurrOptional.id,
             "teacher": $scope.CurrOptional.teacher,
             "name": $scope.CurrOptional.name,
             "credit_number": $scope.CurrOptional.credit_number,
             "year": $scope.CurrOptional.year,
             "semester": $scope.CurrOptional.semester,
-            "description": $scope.CurrOptional.description,
+            //"description": $scope.CurrOptional.description,
             "aproval_status": $scope.CurrOptional.aproval_status,
-            "group": $scope.CurrOptional.group,
-            "votes": $scope.CurrOptional.votes
-        };
-
-
-
-       // var respons = chiefFactory.setGroup(dataToSend, $scope.CurrOptional.id);
-
-        console.log(data);
-        var respons = chiefFactory.setGroup($scope.CurrOptional);
+            "group": $scope.CurrOptional.group
+            //"votes": $scope.CurrOptional.votes
+        });
 
         if (respons)
             $scope.optionalSelected = true;

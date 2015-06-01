@@ -21,7 +21,7 @@
         //setGroup: function(dataToSend,id)
         //{
         //    return Restangular.one('faculty').put('course/optional/' + id + "/", dataToSend)
-        setGroup: function(dataToSend){
+        setGroup: function(data){
             return Restangular.all('faculty/course/optional/' + data.pk + '/').customPUT(data);
         }
     }
