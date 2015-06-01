@@ -39,7 +39,10 @@
 
 
 
-        var respons = chiefFactory.setGroup(dataToSend, $scope.CurrOptional.id);
+       // var respons = chiefFactory.setGroup(dataToSend, $scope.CurrOptional.id);
+
+        console.log(data);
+        var respons = chiefFactory.setGroup($scope.CurrOptional);
 
         if (respons)
             $scope.optionalSelected = true;

@@ -14,16 +14,15 @@
         getOptionalCourses: function () {
             return Restangular.one('faculty').customGET('course/optional/list/', {});
         },
-
         approveOptionalCourse: function (optionalCourse) {
             return Restangular.one('faculty').customGET('course/optional/', optionalCourse, {})
         },
 
-        setGroup: function(dataToSend,id)
-        {
-            return Restangular.one('faculty').put('course/optional/' + id + "/", dataToSend);
+        //setGroup: function(dataToSend,id)
+        //{
+        //    return Restangular.one('faculty').put('course/optional/' + id + "/", dataToSend)
+        setGroup: function(dataToSend){
+            return Restangular.all('faculty/course/optional/' + data.pk + '/').customPUT(data);
         }
-
-
     }
 });
