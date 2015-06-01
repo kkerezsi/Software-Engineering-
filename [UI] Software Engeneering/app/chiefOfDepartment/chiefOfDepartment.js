@@ -14,12 +14,24 @@
             $scope.CurrOptional.group = 1;
 
         if ($scope.CurrOptional.year == 3 && $scope.CurrOptional.semester == 1)
-            $scope.CurrOptional.group = 2;
+            $scope.CurrOptional.group = 3;//$scope.getGroupForOptionals(2,3);
 
         if ($scope.CurrOptional.year == 3 && $scope.CurrOptional.semester == 2)
-            $scope.CurrOptional.group = 4;
+            $scope.CurrOptional.group =5;
         
-        var respons = chiefFactory.setGroup($scope.CurrOptional);
+        console.log(data);
+        var respons = chiefFactory.setGroup({
+            "pk": $scope.CurrOptional.id,
+            "teacher": $scope.CurrOptional.teacher,
+            "name": $scope.CurrOptional.name,
+            "credit_number": $scope.CurrOptional.credit_number,
+            "year": $scope.CurrOptional.year,
+            "semester": $scope.CurrOptional.semester,
+            //"description": $scope.CurrOptional.description,
+            "aproval_status": $scope.CurrOptional.aproval_status,
+            "group": $scope.CurrOptional.group
+            //"votes": $scope.CurrOptional.votes
+        });
 
         if (respons)
             $scope.optionalSelected = true;

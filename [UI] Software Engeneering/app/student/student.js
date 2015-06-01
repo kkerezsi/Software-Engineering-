@@ -176,6 +176,6 @@
                 $scope.successfullSave = undefined;
         });
 
-        $location.path('/');
+        $location.path('/Student');
     }
 });
