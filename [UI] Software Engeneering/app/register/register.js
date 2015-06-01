@@ -31,7 +31,6 @@
         var email = form.email.value;
         var type = form.userType.value;
         if (firstName.length > 0 && lastName.length > 0 && email > 0)
-            console.log(1);
         registerFactory.saveUser({
                 'name': firstName,
                 'firstName': firstName,
