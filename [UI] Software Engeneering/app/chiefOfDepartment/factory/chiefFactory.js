@@ -19,9 +19,9 @@
             return Restangular.one('faculty').customGET('course/optional/', optionalCourse, {})
         },
 
-        setGroup: function(dataToSend)
+        setGroup: function(dataToSend,id)
         {
-            return Restangular.one('faculty').customPUT('course/optional/list/', dataToSend);
+            return Restangular.one('faculty').put('course/optional/' + id + "/", dataToSend);
         }
 
 
