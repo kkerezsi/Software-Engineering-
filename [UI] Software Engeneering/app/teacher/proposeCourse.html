@@ -101,9 +101,9 @@
                     <br />
                    
                     <div class="col-lg-4 col-md-4 col-sm-4 text-left">
-                        <a class="btn btn-info" style="color: black; width: 200px" ng-click="proposeCourse()"><b>Propose Course</b></a>
-                        <div ng-if="successfullyProposed" class="colorGreen">Successfully Proposed Course</div>
-                        <div ng-if="!successfullyProposed" class="colorRed">Error on Proposing Course</div>
+                        <a class="btn btn-info" style="color:black;" ng-click="proposeCourse()"><b>Propose Course</b></a>
+                        <div ng-if="successfullyProposed == true" class="colorGreen">Successfully Proposed Course</div>
+                        <div ng-if="successfullyProposed == false" class="colorRed">Error on Proposing Course</div>
                         <br />
                         <br />
                     </div>

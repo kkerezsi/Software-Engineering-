@@ -19,6 +19,7 @@
         if ($scope.CurrOptional.year == 3 && $scope.CurrOptional.semester == 2)
             $scope.CurrOptional.group = 4;
         
+        console.log(data);
         var respons = chiefFactory.setGroup($scope.CurrOptional);
 
         if (respons)

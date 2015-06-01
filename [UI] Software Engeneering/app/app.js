@@ -45,6 +45,7 @@ var app = angular.module('softwareEngeneering', [
                 permission: function (authorizationService, $route) {
                     return authorizationService.permissionCheck([
                         roles.superUser,
+                        roles.Teacher,
                         roles.Chief,
                     ]);
                 }
@@ -104,14 +105,14 @@ var app = angular.module('softwareEngeneering', [
          .when('/Register', {
              controller: 'RegisterCtrl',
              templateUrl: 'app/register/register.html',
-             //resolve: {
-             //    permission: function (authorizationService, $route) {
-             //        return authorizationService.permissionCheck([
-             //            roles.superUser,
-             //            roles.Teacher
-             //        ]);
-             //    }
-             //}
+             resolve: {
+                 permission: function (authorizationService, $route) {
+                     return authorizationService.permissionCheck([
+                         roles.superUser,
+                         roles.AdminStaff,
+                     ]);
+                 }
+             }
          })
         .when('/LogIn',
         {

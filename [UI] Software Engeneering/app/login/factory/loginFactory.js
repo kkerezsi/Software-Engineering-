@@ -65,18 +65,20 @@
         /* Use this for real authentication
          ----------------------------------------------*/
         $http.post(configs.baseUrl + 'account/login/', { username: username, password: password }, { 'X-CSRFToken': 'csrftoken' })
-            .success(function (response) {
+            .success(function (response) { 
                 console.log(response);
                 callback(response);
-            }
-        );
+            })
+        .error(function (response) {
+            callback(undefined);
+        });
 
     };
 
-    service.SetCredentials = function (username, password, roleType) {
+    service.SetCredentials = function (username, password, id , roleType) {
         //TestVals
         var authdata = Base64.encode(username + ':' + password);
-        id = '2';
+        
         $rootScope.globals = {
             currentUser: {
                 username: username,

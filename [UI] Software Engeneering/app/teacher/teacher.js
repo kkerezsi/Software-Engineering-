@@ -75,15 +75,25 @@
             teacherFactory.getEnrolled().then(function (dataEn) {
                 $scope.enrolled = dataEn;
             
-                //
                 angular.forEach($scope.enrolled, function (enrole, key) {
                     if (enrole.id != null && enrole.course == course && enrole.student == studentId) {
+<<<<<<< HEAD
                         enrole.grade = grade;
                         $scope.gr = grade;
                         
+=======
+
+                        teacherFactory.addGradeForStudent({
+                            'pk': enrole.id,
+                            'course': course,
+                            'student': studentId,
+                            'grade': grade
+                        });
+
+                        return;
+>>>>>>> b6bcdfb40cc09ee9e76afd3a7755743b5c7e1681
                     }
                 })
-                //
             })
          }
 
@@ -138,7 +148,7 @@
         var semester = $scope.semester;
         //var teacher = $scope.teacher;
 
-        if (name.length > 0 && description.length > 0 && credit.length > 0 && year.length > 0 && semester.length > 0) {
+        if (name && name.length > 0 && description && description.length > 0 && credit && credit.length > 0 && year && year.length > 0 && semester.length > 0) {
             var response = teacherFactory.proposeCourse({
                 'name': name,
                 'description': description,
@@ -153,7 +163,7 @@
                 'votes': 0,
                 'student_preferences': []
             })
-            if (response)
+            if (response.success)
                 $scope.successfullyProposed = true;
             else
                 $scope.successfullyProposed = false;
