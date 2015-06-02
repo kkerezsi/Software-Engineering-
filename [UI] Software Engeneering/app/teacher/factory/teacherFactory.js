@@ -31,7 +31,10 @@
         },
         addGradeForStudent: function (data) {
             return Restangular.all('faculty/enrolled/' + data.pk + '/').customPUT(data);
-        }
+        },
+        addPromovationDateForStudent: function (data) {
+        return Restangular.all('faculty/enrolled/' + data.pk + '/').customPUT(data);
+    }
 
     }
    

@@ -12,7 +12,7 @@
             </div>
             <div style="padding-left:0px">
                 <br />
-                <h1>Students</h1>
+                <h1><span class="glyphicons glyphicons-group"></span> Students</h1>
                 <br />
                 <br />
                 <div style="width:400px">
@@ -22,15 +22,25 @@
                         <option value="">Select course...</option>
                     </select>
                 </div>
+
+                <!--
+                <div style="width:400px">
+                    <select class="btn btn-toolbar col-lg-9" ng-options="group.id as group.number for group in groups"
+                            ng-model="selectedGroup"
+                            ng-change="onChangeGroup()">
+                        <option value="">Select group...</option>
+                    </select>
+                </div>
+                    -->
                 
                 <table class="table">
                     <thead>
-                        <tr>\<th style="text-align:center">Id</th>
+                        <tr><th style="text-align:center">Id</th>
                             <th style="text-align:center">Name</th>
                             <th style="text-align:center">Group</th>
                             <th style="text-align:center">Email</th>
                             <th style="text-align:center">Grade</th>
-                        
+                            <th style="text-align:center">Promovation Date</th>
                            
                         </tr>
                     </thead>
@@ -41,6 +51,7 @@
                             <td>{{item.group}}</td>
                             <td>{{item.email}}</td>
                             <td>{{item.grade}}</td>
+                            <td>{{item.promovation_date}}</td>
                           
                                                       
                         </tr>
@@ -101,11 +112,70 @@
                     <br />
 
 
-                 
+             
 
                 </div>
                 <br />
             </form>
+
+
+
+            <form name="form2" class="">
+                <div class="col-lg-4 col-md-4 col-sm-4 text-left" style="width:200px">
+
+
+
+                    <p>Student ID:</p>
+                    <input type="text" name="studId" ng-model="studentId2" class="form-control"
+                           ng-minlength="1" ng-maxlength="10" style="width:100px">
+                    <div role="alert">
+                        <span class="error" ng-show="form2.studentId2.$error.minlength">
+                            Too short!
+                        </span>
+                        <span class="error" ng-show="form2.studentId2.$error.maxlength">
+                            Too long!
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-4 text-left" style="width:200px">
+
+                    <p>Promovation Date:</p>
+                    <input type="text" name="da" ng-model="date" class="form-control"
+                           ng-minlength="1" ng-maxlength="15" style="width:100px">
+                    <div role="alert">
+                        <span class="error" ng-show="form2.date.$error.minlength">
+                            Too short!
+                        </span>
+                        <span class="error" ng-show="form2.date.$error.maxlength">
+                            Too long!
+                        </span>
+                    </div>
+                    <br />
+
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-4 text-left" style="width:200px">
+
+                    <br />
+
+
+
+                    <a class="btn btn-info" style="color: black; width: 100px" ng-click="addPromovationDateForStudent()"><b>Change Promovation Date</b></a>
+                    <div ng-if="successfullyChanged" class="colorGreen">Adding Promovation Date Succesfully!</div>
+                    <br />
+                    <br />
+
+
+
+
+                </div>
+                <br />
+            </form>
+
+
+
 </div>
 
     </div>
