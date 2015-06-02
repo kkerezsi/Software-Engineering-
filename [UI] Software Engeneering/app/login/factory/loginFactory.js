@@ -7,66 +7,8 @@
 
         /* Dummy authentication for testing, uses $timeout to simulate api call
          ----------------------------------------------*/
-
-        var getDummyResponse = function (username, password) {
-            if (!username || !password)
-                return { success: false };
-
-            switch (username) {
-                case "test":
-                    return { success: username === 'test' && password === 'test' };
-                case "chief":
-                    return { success: username === 'chief' && password === 'chief' };
-                case "teacher":
-                    return { success: username === 'teacher' && password === 'teacher' };
-                case "student":
-                    return { success: username === 'student' && password === 'student' };
-                case "adminStaff":
-                    return { success: username === 'adminStaff' && password === 'adminStaff' };
-                default:
-                    return { success: false };
-            }
-        };
-
-        var getDummyRole = function (username) {
-            if (!username)
-                return false;
-
-            switch (username) {
-                case "test":
-                    return 0;
-                case "chief":
-                    return 1;
-                case "teacher":
-                    return 2;
-                case "student":
-                    return 3;
-                case "adminStaff":
-                    return 4;
-                default:
-                    return -1;
-            }
-        };
-
-        //$timeout(function () {
-        //    var response = getDummyResponse(username, password)
-
-        //    if (!response.success) {
-        //        response.message = 'Username or password is incorrect';
-        //    }
-        //    else {
-        //        response.roleType = getDummyRole(username);
-        //    }
-
-        //    callback(response);
-        //}, 1000);
-
-
-        /* Use this for real authentication
-         ----------------------------------------------*/
         $http.post(configs.baseUrl + 'account/login/', { username: username, password: password }, { 'X-CSRFToken': 'csrftoken' })
             .success(function (response) { 
-                console.log(response);
                 callback(response);
             })
         .error(function (response) {
@@ -82,7 +24,7 @@
         $rootScope.globals = {
             currentUser: {
                 username: username,
-                authdata: authdata,
+                password: password,
                 userId: id,
                 role: roleType
             }
@@ -95,7 +37,6 @@
     service.ClearCredentials = function () {
         $rootScope.globals = {};
         $cookieStore.remove('globals');
-        $http.defaults.headers.common.Authorization = 'Basic ';
     };
 
     return service;

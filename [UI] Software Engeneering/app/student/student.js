@@ -5,9 +5,8 @@
     $scope.Nume = "Student Name";
     $scope.Cadru = "Matematica Informatica UBB";
 
-    var hardcodedStudentId = $rootScope.globals.currentUser.userId;
+    studentFactory.getStudent($rootScope.globals.currentUser.userId).then(function (data) {
 
-    studentFactory.getStudent(hardcodedStudentId).then(function (data) {
         $scope.student = data;
         $scope.list = []
         $scope.Nume = data.name
@@ -177,6 +176,6 @@
                 $scope.successfullSave = undefined;
         });
 
-        $location.path('/');
+        $location.path('/Student');
     }
 });

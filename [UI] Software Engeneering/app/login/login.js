@@ -22,9 +22,11 @@
                     }
 
                     if (newResponse.success) {
+                        console.log(newResponse);
                         var response = loginFactory.SetCredentials(username, password, newResponse.id, response.role);
                         if ($rootScope.globals.currentUser) {
                             $scope.getCookie();
+                            console.log($rootScope.globals.currentUser);
                             $location.path('/');
                         }
                         else {
