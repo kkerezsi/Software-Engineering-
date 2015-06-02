@@ -228,8 +228,8 @@ var app = angular.module('softwareEngeneering', [
                     username: $rootScope.globals.currentUser.username,
                     password: $rootScope.globals.currentUser.password
                 }, { 'X-CSRFToken': 'csrftoken' }).then(function (response) {
-                    console.log(response);
-                    loginFactory.SetCredentials(response.username, $rootScope.globals.currentUser.password, response.id, response.role);
+                    console.log(0,response);
+                    loginFactory.SetCredentials(response.username, $rootScope.globals.currentUser.password, response.profile_id, response.role);
 
                     //when server service responds then we will fill the permission object
 
