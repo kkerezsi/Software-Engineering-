@@ -1,4 +1,6 @@
-﻿'use strict';
+﻿///Created by Kerezsi Alex
+
+'use strict';
 
 var roles = {
     superUser: 0,
