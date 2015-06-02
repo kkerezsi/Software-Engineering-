@@ -11,6 +11,7 @@
     teacherFactory.getTeacher(teacherID).then(function (data) {
         $scope.teacher = data;
         $scope.studentsCourse = [];
+        $scope.studentsGroup = [];
         $scope.courses = data.courses;
         $scope.Nume = data.name;
     })
@@ -40,7 +41,8 @@
                                     "name": $scope.student.name,
                                     "group": $scope.student.group,
                                     "email": $scope.student.email,
-                                    "grade": $scope.gr
+                                    "grade": $scope.gr,
+                                    "promovation_date": $scope.student.promovation_date
                                 });
                                 //$scope.studentsCourse.push($scope.student);
                             });
@@ -65,6 +67,38 @@
             $scope.changeCourse(undefined);
     }
 
+
+
+    //here something new
+    /*
+    $scope.changeGroup = function (groupId) {
+        if (groupId) {
+            //$scope.studentsCourse = [];
+            angular.forEach($scope.studentsCourse, function (student, keyI) {
+                if (student.group!=groupId) {
+                    
+                    $scope.studentsCourse.push({
+                        "id": $scope.student.id,
+                        "name": $scope.student.name,
+                        "group": $scope.student.group,
+                        "email": $scope.student.email,
+                        "grade": $scope.gr
+                    })
+                }
+            })
+        }
+    }
+
+    $scope.onChangeGroup = function () {
+        $scope.studentsGroup = [];
+        if ($scope.selectedGroup)
+            $scope.changeGroup($scope.selectedGroup);
+        else
+            $scope.changeGroup(undefined);
+    }
+    */
+    //hereee
+
     $scope.addGradeForStudent = function () {
         var studentId = $scope.studentId;
         var grade = $scope.grade;
@@ -77,12 +111,6 @@
             
                 angular.forEach($scope.enrolled, function (enrole, key) {
                     if (enrole.id != null && enrole.course == course && enrole.student == studentId) {
-<<<<<<< HEAD
-                        enrole.grade = grade;
-                        $scope.gr = grade;
-                        
-=======
-
                         teacherFactory.addGradeForStudent({
                             'pk': enrole.id,
                             'course': course,
@@ -91,7 +119,6 @@
                         });
 
                         return;
->>>>>>> b6bcdfb40cc09ee9e76afd3a7755743b5c7e1681
                     }
                 })
             })
@@ -100,6 +127,41 @@
         
        
     }
+
+
+    //here
+    $scope.addPromovationDateForStudent = function () {
+        var studentId = $scope.studentId2;
+        var date = $scope.date;
+        var course = $scope.selectedCourse;
+        // $scope.enrolled = [];
+
+        if (studentId.length > 0 && date.length > 0) {
+            teacherFactory.getEnrolled().then(function (dataEn) {
+                $scope.enrolled = dataEn;
+
+                angular.forEach($scope.enrolled, function (enrole, key) {
+                    if (enrole.id != null && enrole.course == course && enrole.student == studentId) {
+                        teacherFactory.addPromovationDateForStudent({
+                            'pk': enrole.id,
+                            'course': course,
+                            'student': studentId,
+                            'promovation_date': date
+                        });
+
+                        return;
+                    }
+                })
+            })
+        }
+
+
+
+    }
+
+    //here
+
+
 
     
 })
