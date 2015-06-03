@@ -2,7 +2,7 @@
 
 .controller('CatalogCtrl', function ($scope, $rootScope, teacherFactory) {
     $scope.Cadru = "Matematica Informatica UBB"
-    //$scope.Nume = $rootScope.globals.currentUser.name;
+    $scope.Nume = $rootScope.globals.currentUser.name;
     //$scope.userID = $rootScope.id;
 
     var teacherID = 2;
